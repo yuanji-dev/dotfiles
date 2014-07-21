@@ -1,5 +1,11 @@
 "------------------------------------------------------------------------------
-" vundle configurations
+" ░█▀▀░▀█▀░█▄█░█▀█░▀░█▀▀░░░█░█░▀█▀░█▄█░█▀▄░█▀▀
+" ░█░█░░█░░█░█░█░█░░░▀▀█░░░▀▄▀░░█░░█░█░█▀▄░█░░
+" ░▀▀▀░▀▀▀░▀░▀░▀▀▀░░░▀▀▀░░░░▀░░▀▀▀░▀░▀░▀░▀░▀▀▀
+"------------------------------------------------------------------------------
+
+"------------------------------------------------------------------------------
+" VUNDLE CONFIGURATIONS
 "------------------------------------------------------------------------------
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -20,6 +26,7 @@ Plugin 'Shougo/neosnippet-snippets'
 Plugin 'honza/vim-snippets'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'flazz/vim-colorschemes'
+Plugin 'scrooloose/nerdtree'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -37,7 +44,7 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 "------------------------------------------------------------------------------
-" general configurations
+" GENERAL CONFIGURATIONS
 "------------------------------------------------------------------------------
 syntax on
 colorscheme Monokai
@@ -47,22 +54,23 @@ set guifont=Sauce_Code_Powerline_Light:h14
 " do not display right scrollbar
 set guioptions=R
 set linespace=-2
+set transparency=5
 
 "------------------------------------------------------------------------------
-" configuration of airline
+" AIRLINE CONFIGURATIONS
 "------------------------------------------------------------------------------
 set laststatus=2
 let g:airline_powerline_fonts=1
 let g:airline_theme='laederon'
 
 "------------------------------------------------------------------------------
-" python-mode configurations
+" PYTHON-MODE CONFIGURATIONS
 "------------------------------------------------------------------------------
 let g:pymode_rope=0
 let g:pymode_lint_on_fly=1
 
 "------------------------------------------------------------------------------
-" neocomplete.vim configurations
+" NEOCOMPLETE.VIM CONFIGURATIONS
 "------------------------------------------------------------------------------
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
@@ -84,7 +92,7 @@ if !exists('g:neocomplete#sources#omni#input_patterns')
 endif
 
 "------------------------------------------------------------------------------
-" neosnippet.vim configurations
+" NEOSNIPPET.VIM CONFIGURATIONS
 "------------------------------------------------------------------------------
 " Plugin key-mappings.
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
@@ -109,14 +117,14 @@ let g:neosnippet#enable_snipmate_compatibility = 1
 let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
 
 "------------------------------------------------------------------------------
-" vim-snippets configurations
+" VIM-SNIPPETS CONFIGURATIONS
 "------------------------------------------------------------------------------
 let g:snips_author='Gimo'
 let g:snips_email='self@gimo.me'
 let g:snips_github='http://github.com/masakichi'
 
 "------------------------------------------------------------------------------
-" jedi-vim configurations
+" JEDI-VIM CONFIGURATIONS
 "------------------------------------------------------------------------------
 " disable select first popup
 let g:jedi#auto_vim_configuration = 0
