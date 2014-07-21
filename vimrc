@@ -15,6 +15,7 @@ Plugin 'Shougo/neocomplete.vim'
 Plugin 'Shougo/neosnippet'
 Plugin 'Shougo/neosnippet-snippets'
 Plugin 'honza/vim-snippets'
+Plugin 'davidhalter/jedi-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -47,7 +48,7 @@ let g:airline_theme='laederon'
 
 "------------------------------------------------------------------------------
 " python-mode configurations
-let g:pymode_rope_lookup_project=0
+let g:pymode_rope=0
 
 "------------------------------------------------------------------------------
 " neocomplete.vim configurations
@@ -99,3 +100,10 @@ let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
 let g:snips_author='Gimo'
 let g:snips_email='self@gimo.me'
 let g:snips_github='http://github.com/masakichi'
+
+"------------------------------------------------------------------------------
+" jedi-vim configurations
+" disable select first popup
+let g:jedi#auto_vim_configuration = 0
+let g:jedi#completions_enabled = 0
+let g:jedi#popup_select_first = 0
