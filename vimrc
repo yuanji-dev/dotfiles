@@ -40,10 +40,12 @@ filetype plugin indent on    " required
 " general configurations
 "------------------------------------------------------------------------------
 syntax on
-colorscheme molokai
+colorscheme Monokai
 set ignorecase
-set nu
-set guifont=Sauce_Code_Powerline_ExtraLight:h14
+set number
+set guifont=Sauce_Code_Powerline_Light:h14
+" do not display right scrollbar
+set guioptions=R
 set linespace=-2
 
 "------------------------------------------------------------------------------
