@@ -1,3 +1,6 @@
+"------------------------------------------------------------------------------
+" vundle configurations
+"------------------------------------------------------------------------------
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -16,6 +19,7 @@ Plugin 'Shougo/neosnippet'
 Plugin 'Shougo/neosnippet-snippets'
 Plugin 'honza/vim-snippets'
 Plugin 'davidhalter/jedi-vim'
+Plugin 'flazz/vim-colorschemes'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -34,24 +38,30 @@ filetype plugin indent on    " required
 
 "------------------------------------------------------------------------------
 " general configurations
+"------------------------------------------------------------------------------
 syntax on
-colorscheme desert
+colorscheme molokai
 set ignorecase
 set nu
-set guifont=Source_Code_Pro_for_Powerline:h14
+set guifont=Sauce_Code_Powerline_ExtraLight:h14
+set linespace=-2
 
 "------------------------------------------------------------------------------
 " configuration of airline
+"------------------------------------------------------------------------------
 set laststatus=2
 let g:airline_powerline_fonts=1
 let g:airline_theme='laederon'
 
 "------------------------------------------------------------------------------
 " python-mode configurations
+"------------------------------------------------------------------------------
 let g:pymode_rope=0
+let g:pymode_lint_on_fly=1
 
 "------------------------------------------------------------------------------
 " neocomplete.vim configurations
+"------------------------------------------------------------------------------
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
 " Use neocomplete.
@@ -73,6 +83,7 @@ endif
 
 "------------------------------------------------------------------------------
 " neosnippet.vim configurations
+"------------------------------------------------------------------------------
 " Plugin key-mappings.
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
@@ -97,12 +108,14 @@ let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
 
 "------------------------------------------------------------------------------
 " vim-snippets configurations
+"------------------------------------------------------------------------------
 let g:snips_author='Gimo'
 let g:snips_email='self@gimo.me'
 let g:snips_github='http://github.com/masakichi'
 
 "------------------------------------------------------------------------------
 " jedi-vim configurations
+"------------------------------------------------------------------------------
 " disable select first popup
 let g:jedi#auto_vim_configuration = 0
 let g:jedi#completions_enabled = 0
