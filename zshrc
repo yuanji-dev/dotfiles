@@ -78,3 +78,4 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias blogenv="cd ~/Dropbox/Github/blog && source ~/venv/bin/activate"
