@@ -50,12 +50,13 @@ syntax on
 colorscheme Monokai
 set ignorecase
 set number
-set guifont=Sauce_Code_Powerline_Light:h14
-" do not display right scrollbar
-set guioptions=R
-set linespace=-2
-set transparency=5
-
+if has("gui_running")
+    set guifont=Sauce_Code_Powerline_Light:h14
+    " do not display right scrollbar
+    set guioptions=R
+    set linespace=-2
+    set transparency=5
+endif
 "------------------------------------------------------------------------------
 " AIRLINE CONFIGURATIONS
 "------------------------------------------------------------------------------
