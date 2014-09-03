@@ -27,6 +27,7 @@ Plugin 'honza/vim-snippets'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'scrooloose/nerdtree'
+Plugin 'keitheis/vim-plim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
