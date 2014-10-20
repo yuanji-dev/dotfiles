@@ -52,12 +52,13 @@ colorscheme Monokai
 set ignorecase
 set number
 if has("gui_running")
-    set guifont=Sauce_Code_Powerline_Light:h14
+    set guifont=Monaco_for_Powerline:h14
     " do not display right scrollbar
     set guioptions=R
     set linespace=-2
     set transparency=5
 endif
+set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 "------------------------------------------------------------------------------
 " AIRLINE CONFIGURATIONS
 "------------------------------------------------------------------------------
