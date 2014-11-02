@@ -28,6 +28,7 @@ Plugin 'davidhalter/jedi-vim'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'scrooloose/nerdtree'
 Plugin 'keitheis/vim-plim'
+Plugin 'mattn/emmet-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
