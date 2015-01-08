@@ -49,7 +49,7 @@ filetype plugin indent on    " required
 " GENERAL CONFIGURATIONS
 "------------------------------------------------------------------------------
 syntax on
-colorscheme Monokai
+colorscheme summerfruit256
 set ignorecase
 set number
 if has("gui_running")
@@ -65,7 +65,7 @@ set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 "------------------------------------------------------------------------------
 set laststatus=2
 let g:airline_powerline_fonts=1
-let g:airline_theme='laederon'
+let g:airline_theme='sol'
 
 "------------------------------------------------------------------------------
 " PYTHON-MODE CONFIGURATIONS
