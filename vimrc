@@ -49,7 +49,7 @@ filetype plugin indent on    " required
 " GENERAL CONFIGURATIONS
 "------------------------------------------------------------------------------
 syntax on
-colorscheme summerfruit256
+colorscheme hemisu
 set ignorecase
 set number
 if has("gui_running")
@@ -57,7 +57,7 @@ if has("gui_running")
     " do not display right scrollbar
     set guioptions=R
     set linespace=-2
-    set transparency=5
+    set transparency=0
 endif
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 "------------------------------------------------------------------------------
