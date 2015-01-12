@@ -27,8 +27,10 @@ Plugin 'honza/vim-snippets'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'scrooloose/nerdtree'
-Plugin 'keitheis/vim-plim'
 Plugin 'mattn/emmet-vim'
+Plugin 'chrisbra/csv.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'tpope/vim-fugitive'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -49,9 +51,11 @@ filetype plugin indent on    " required
 " GENERAL CONFIGURATIONS
 "------------------------------------------------------------------------------
 syntax on
-colorscheme hemisu
+colorscheme Monokai-chris
 set ignorecase
 set number
+" Space is my leader.
+let mapleader="\<Space>"
 if has("gui_running")
     set guifont=Monaco_for_Powerline:h14
     " do not display right scrollbar
@@ -134,3 +138,11 @@ let g:snips_github='http://github.com/masakichi'
 let g:jedi#auto_vim_configuration = 0
 let g:jedi#completions_enabled = 0
 let g:jedi#popup_select_first = 0
+let g:jedi#use_splits_not_buffers = "left"
+
+"------------------------------------------------------------------------------
+" CTRLP CONFIGURATIONS
+"------------------------------------------------------------------------------
+" Ignore files. 
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
