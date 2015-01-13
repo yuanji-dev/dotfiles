@@ -83,3 +83,5 @@ export SSH_KEY_PATH="~/.ssh/dsa_id"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias pyServer="python -m SimpleHTTPServer"
+
+source /Users/Gimo/.iterm2_shell_integration.zsh
