@@ -67,6 +67,9 @@ if has("gui_running")
     set transparency=0
 endif
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
+imap jj <Esc>
+
+
 "------------------------------------------------------------------------------
 " AIRLINE CONFIGURATIONS
 "------------------------------------------------------------------------------
@@ -126,12 +129,12 @@ let g:EasyMotion_do_mapping = 0 " Disable default mappings
 
 " Bi-directional find motion
 " Jump to anywhere you want with minimal keystrokes, with just one key binding.
-" `s{char}{label}`
+" `trigger{char}{label}`
 nmap s <Plug>(easymotion-s)
 " or
-" `s{char}{char}{label}`
+" `trigger{char}{char}{label}`
 " Need one more keystroke, but on average, it may be more comfortable.
-nmap s <Plug>(easymotion-s2)
+" nmap <Leader>f <Plug>(easymotion-s2)
 
 " Turn on case sensitive feature
 let g:EasyMotion_smartcase = 1
