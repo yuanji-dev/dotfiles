@@ -34,6 +34,8 @@ Plugin 'honza/vim-snippets'
 Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'majutsushi/tagbar'
+Plugin 'keitheis/vim-plim'
+Plugin 'wavded/vim-stylus'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -159,3 +161,6 @@ let g:UltiSnipsEditSplit="vertical"
 " TAGBAR CONFIGURATIONS
 "------------------------------------------------------------------------------
 nmap <Leader>t :TagbarToggle<CR>
+let g:tagbar_sort = 0
+let g:tagbar_autofocus = 1
+let g:tagbar_autopreview = 1
