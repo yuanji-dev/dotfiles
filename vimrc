@@ -19,9 +19,10 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 Plugin 'bling/vim-airline'
-Plugin 'klen/python-mode'
-Plugin 'Shougo/neocomplete.vim'
-Plugin 'davidhalter/jedi-vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Shougo/neocomplete.vim'
+" Plugin 'davidhalter/jedi-vim'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'scrooloose/nerdtree'
 Plugin 'mattn/emmet-vim'
@@ -36,6 +37,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'majutsushi/tagbar'
 Plugin 'keitheis/vim-plim'
 Plugin 'wavded/vim-stylus'
+Plugin 'tpope/vim-markdown'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -82,39 +84,39 @@ let g:airline_theme='sol'
 "------------------------------------------------------------------------------
 " PYTHON-MODE CONFIGURATIONS
 "------------------------------------------------------------------------------
-let g:pymode_rope=0
-let g:pymode_lint_on_fly=1
+" let g:pymode_rope=0
+" let g:pymode_lint_on_fly=1
 
 "------------------------------------------------------------------------------
 " NEOCOMPLETE.VIM CONFIGURATIONS
 "------------------------------------------------------------------------------
-" Disable AutoComplPop.
-let g:acp_enableAtStartup = 0
-" Use neocomplete.
-let g:neocomplete#enable_at_startup = 1
-" Use smartcase.
-let g:neocomplete#enable_smart_case = 1
-" <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-" Enable omni completion.
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-" Enable heavy omni completion.
-if !exists('g:neocomplete#sources#omni#input_patterns')
-  let g:neocomplete#sources#omni#input_patterns = {}
-endif
+"" Disable AutoComplPop.
+"let g:acp_enableAtStartup = 0
+"" Use neocomplete.
+"let g:neocomplete#enable_at_startup = 1
+"" Use smartcase.
+"let g:neocomplete#enable_smart_case = 1
+"" <TAB>: completion.
+"inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+"" Enable omni completion.
+"autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+"autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+"autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+"autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+"autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+"" Enable heavy omni completion.
+"if !exists('g:neocomplete#sources#omni#input_patterns')
+"  let g:neocomplete#sources#omni#input_patterns = {}
+"endif
 
 "------------------------------------------------------------------------------
 " JEDI-VIM CONFIGURATIONS
 "------------------------------------------------------------------------------
 " disable select first popup
-let g:jedi#auto_vim_configuration = 0
-let g:jedi#completions_enabled = 0
-let g:jedi#popup_select_first = 0
-let g:jedi#use_splits_not_buffers = "left"
+"let g:jedi#auto_vim_configuration = 0
+"let g:jedi#completions_enabled = 0
+"let g:jedi#popup_select_first = 0
+"let g:jedi#use_splits_not_buffers = "left"
 
 "------------------------------------------------------------------------------
 " CTRLP CONFIGURATIONS
@@ -163,4 +165,20 @@ let g:UltiSnipsEditSplit="vertical"
 nmap <Leader>t :TagbarToggle<CR>
 let g:tagbar_sort = 0
 let g:tagbar_autofocus = 1
-let g:tagbar_autopreview = 1
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+"------------------------------------------------------------------------------
+" SYNTASTIC CONFIGURATIONS
+"------------------------------------------------------------------------------
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+"------------------------------------------------------------------------------
+" VIM-MARKDOWN CONFIGURATIONS
+"------------------------------------------------------------------------------
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown

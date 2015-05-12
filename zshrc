@@ -45,7 +45,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git brew pip python web-search virtualenvwrapper)
+plugins=(z git brew pip python web-search virtualenvwrapper)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -85,3 +85,4 @@ export SSH_KEY_PATH="~/.ssh/dsa_id"
 alias pyServer="python -m SimpleHTTPServer"
 
 source /Users/Gimo/.iterm2_shell_integration.zsh
+export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8
