@@ -147,6 +147,11 @@ let g:EasyMotion_smartcase = 1
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 
+"------------------------------------------------------------------------------
+" YOUCOMPLETEME CONFIGURATIONS
+"------------------------------------------------------------------------------
+nmap <leader>gd :YcmCompleter GoTo<CR>
+let g:ycm_goto_buffer_command = 'vertical-split'
 
 "------------------------------------------------------------------------------
 " ULTISNIPS CONFIGURATIONS

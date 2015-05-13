@@ -1,3 +1,8 @@
+# Initial
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -50,12 +55,11 @@ plugins=(z git brew pip python web-search virtualenvwrapper)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Dropbox/Github
 source /usr/local/bin/virtualenvwrapper.sh
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -84,5 +88,5 @@ export SSH_KEY_PATH="~/.ssh/dsa_id"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias pyServer="python -m SimpleHTTPServer"
 
-source /Users/Gimo/.iterm2_shell_integration.zsh
+# source /Users/Gimo/.iterm2_shell_integration.zsh
 export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8
