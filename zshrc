@@ -87,6 +87,7 @@ export SSH_KEY_PATH="~/.ssh/dsa_id"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias pyServer="python -m SimpleHTTPServer"
 alias rmLog="sudo rm -rf /private/var/log/asl/*.asl"
+alias ladder="proxychains4 -q"
 
 # source /Users/Gimo/.iterm2_shell_integration.zsh
 export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8
