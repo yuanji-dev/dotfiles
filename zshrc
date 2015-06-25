@@ -52,7 +52,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Add wisely, as too many plugins slow down shell startup.
 # plugins=(z git brew pip python httpie virtualenvwrapper)
 # Bug: https://github.com/robbyrussell/oh-my-zsh/pull/3918/files
-plugins=(z git brew pip python httpie)
+plugins=(z git brew pip python httpie zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
