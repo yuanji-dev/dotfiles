@@ -1,6 +1,7 @@
 alias balin 'mosh yuanji@balin'
 alias dev2 'mosh yuanji@doubandev2'
-alias na 'mosh --ssh="ssh -p 26114" root@nano.gimo.me'
+alias nano 'mosh --ssh="ssh -p 26114" root@nano.gimo.me'
+alias mio 'mosh --ssh="ssh -p 23333" mio@mio.gimo.me'
 
 alias ll 'ls -alh'
 alias cat bat
