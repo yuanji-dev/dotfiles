@@ -12,6 +12,6 @@ function proxy_on
 end
 
 function proxy_off
-  set -e http_proxy
-  set -e https_proxy
+  set -eU http_proxy
+  set -eU https_proxy
 end
