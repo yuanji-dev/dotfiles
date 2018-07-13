@@ -9,8 +9,8 @@ alias ll 'ls -alh'
 alias cat bat
 
 function proxy_on
-  set -xU http_proxy 'http://127.0.0.1:1087'
-  set -xU https_proxy 'http://127.0.0.1:1087'
+  set -xU http_proxy 'http://127.0.0.1:1080'
+  set -xU https_proxy 'http://127.0.0.1:1080'
 end
 
 function proxy_off
