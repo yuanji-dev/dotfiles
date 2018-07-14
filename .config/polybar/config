@@ -49,7 +49,7 @@ locale = ja_JP.UTF-8
 
 modules-left = i3
 ;modules-center = mpd
-modules-right = volume funds memory cpu wlan temperature date powermenu
+modules-right = funds memory cpu wlan temperature date powermenu
 
 tray-position = center
 tray-padding = 2
@@ -206,7 +206,7 @@ label = %percentage_used%%
 
 [module/wlan]
 type = internal/network
-interface = wlp4s0
+interface = wlp3s0
 interval = 1.0
 
 format-connected = <ramp-signal> <label-connected>
@@ -315,7 +315,7 @@ animation-charging-framerate = 750
 
 [module/temperature]
 type = internal/temperature
-thermal-zone = 2
+thermal-zone = 1
 warn-temperature = 60
 
 format = <ramp> <label>
