@@ -5,5 +5,3 @@ set -gx theme_nerd_fonts yes
 if status --is-interactive
     keychain --eval --quiet -Q id_rsa | source
 end
-
-
