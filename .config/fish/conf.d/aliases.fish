@@ -7,6 +7,7 @@ alias mio 'mosh --ssh="ssh -p 23333" mio@mio.gimo.me'
 
 alias ll 'ls -alh'
 alias cat bat
+alias vim nvim
 alias pbcopy 'xsel --clipboard --input'
 
 function proxy_on
