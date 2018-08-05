@@ -1,12 +1,3 @@
-Xft.dpi: 192
-*dpi: 192
-Xft.antialias: true
-Xft.hinting: true
-Xft.rgba: rgb
-Xft.autohint: false
-Xft.hintstyle: hintslight
-Xft.lcdfilter: lcddefault
-
 #define base00 #1B2B34
 #define base01 #343D46
 #define base02 #4F5B66
@@ -61,7 +52,7 @@ Xft.lcdfilter: lcddefault
 Xcursor.theme:  xcursor-breeze
 Xcursor.size:   0
 
-URxvt.font:                       xft:Hack Nerd Font Mono-9, xft:Source Han Sans-9
+URxvt.font:                       xft:Hack Nerd Font Mono-11, xft:Source Han Sans-11
 !URxvt.bold.font: -xos4-terminus-bold-r-normal--16-160-72-72-c-80-iso10646-1
 URxvt.depth:                      32
 URxvt*scrollBar:                  false
