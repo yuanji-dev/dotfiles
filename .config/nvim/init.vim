@@ -61,7 +61,6 @@ let g:deoplete#enable_at_startup=1
 " airline config
 let g:airline_powerline_fonts=1
 let g:airline_theme='oceanicnext'
-let g:airline#extensions#tabline#enabled=1
 
 " jedi-vim config
 let g:jedi#auto_vim_configuration=0
