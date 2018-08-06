@@ -17,8 +17,8 @@ secondary = ${xrdb:color5:#e60053}
 alert = ${xrdb:color1:#bd2c40}
 
 [bar/bar]
-monitor = ${env:MONITOR:DP1}
-dpi = 192
+monitor = ${env:MONITOR:}
+dpi = ${xrdb:Xft.dpi:-1}
 width = 100%
 height = 40
 ;offset-x = 1%
