@@ -295,7 +295,7 @@ exec --no-startup-id fcitx
 exec --no-startup-id dropbox
 exec --no-startup-id enpass
 exec --no-startup-id setxkbmap -option 'ctrl:swapcaps'
-exec --no-startup-id $HOME/.screenlayout/air.sh
+exec --no-startup-id $HOME/.screenlayout/launch.sh
 exec --no-startup-id xmodmap -e 'pointer = 3 2 1'
 exec --no-startup-id xset r rate 200 25
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
