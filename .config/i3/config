@@ -187,10 +187,9 @@ bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 # assign [class="Pale moon"] $ws2
 # assign [class="Pcmanfm"] $ws3
 # assign [class="Skype"] $ws5
-assign [class="Slack"] $ws1
-assign [class="TelegramDesktop"] $ws3
-assign [class="Enpass-Desktop"] $ws4
-assign [class="shadowsocks-qt5"] $ws4
+assign [class="Slack"] $ws3
+assign [class="TelegramDesktop"] $ws4
+assign [class="Enpass-Desktop"] $ws5
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 1
@@ -284,7 +283,7 @@ mode "resize" {
 }
 
 # Lock screen
-bindsym $mod+9 exec --no-startup-id blurlock
+# bindsym $mod+9 exec --no-startup-id blurlock
 
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
