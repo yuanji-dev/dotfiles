@@ -34,14 +34,19 @@ syntax enable
 syntax on
 colorscheme OceanicNext
 
+autocmd BufReadPost *
+  \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
+  \ |   exe "normal! g`\""
+  \ | endif
+
 set ignorecase
 set number
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 set expandtab
 set tabstop=4
 set shiftwidth=4
-set cc=100                                                                                             
-set cursorline                                                                                         
+set cc=100
+set cursorline
 set cursorcolumn
 
 let mapleader="\<SPACE>"

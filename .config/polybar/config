@@ -52,7 +52,7 @@ modules-left = i3
 ;modules-center = mpd
 modules-right = cpu memory wlan temperature date
 
-;tray-maxsize = 24
+tray-maxsize = 1000
 tray-position = center
 tray-padding = 1
 ;tray-transparent = true
