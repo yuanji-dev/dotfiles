@@ -228,6 +228,10 @@ for_window [class="Boostnote"] floating enable border normal
 for_window [class="Thunar"] floating enable border normal
 for_window [class="Ristretto"] floating enable border normal
 for_window [class="GoldenDict"] floating enable border normal
+for_window [class="File-roller"] floating enable
+for_window [class="Catfish"] floating enable
+for_window [class="Fcitx-config-gtk3"] floating enable border normal
+for_window [window_role="pop-up"] floating enable border normal
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus

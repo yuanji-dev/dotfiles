@@ -88,8 +88,8 @@ wrapping-scroll = false
 pin-workspaces = true
 
 label-mode-padding = 2
-label-mode-foreground = ${colors.foreground}
-label-mode-background = ${colors.alert}
+label-mode-foreground = ${xrdb:color0:}
+label-mode-background = ${xrdb:color3:}
 
 ; focused = Active workspace on focused monitor
 label-focused = %icon%
