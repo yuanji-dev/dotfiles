@@ -301,9 +301,10 @@ exec --no-startup-id fcitx
 exec --no-startup-id dropbox
 exec --no-startup-id enpass
 exec --no-startup-id setxkbmap -option 'ctrl:swapcaps'
-exec --no-startup-id $HOME/.screenlayout/launch.sh
-exec --no-startup-id xmodmap -e 'pointer = 3 2 1'
-exec --no-startup-id xset r rate 200 25
+exec --no-startup-id $HOME/.auto_settings/launch.sh
+# TODO(Gimo): use xinput instead
+#exec --no-startup-id xmodmap -e 'pointer = 3 2 1'
+exec --no-startup-id xset r rate 250 25
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id blueman-applet
 exec --no-startup-id xautolock -time 10 -locker blurlock
