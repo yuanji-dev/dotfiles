@@ -39,6 +39,9 @@ bindsym $mod+d exec --no-startup-id dmenu_recency
 # rofi run dialog
 bindsym $mod+space exec "rofi -combi-modi window,drun -show combi -show-icons -modi combi"
 
+# move floating window to center
+bindsym $mod+c move absolute position center
+
 ################################################################################################
 ## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
 ################################################################################################
@@ -56,7 +59,6 @@ bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 # bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
 
 # Start Applications
-bindsym $mod+c exec chromium
 bindsym $mod+O exec pcmanfm
 bindsym $mod+Shift+F3 exec gksu pcmanfm
 bindsym $mod+t exec --no-startup-id pkill compton
@@ -209,7 +211,7 @@ for_window [class="Oblogout"] fullscreen enable
 for_window [class="octopi"] floating enable
 for_window [title="About Pale Moon"] floating enable
 for_window [class="Pamac-manager"] floating enable
-for_window [class="Pcmanfm"] floating enable sticky enable
+for_window [class="Pcmanfm"] floating enable sticky enable border normal
 for_window [class="Pavucontrol"] floating enable
 for_window [class="qt5ct"] floating enable sticky enable border normal
 for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
@@ -223,7 +225,7 @@ for_window [class="Xfburn"] floating enable
 for_window [class="mpv"] floating enable border normal
 for_window [class="Enpass-Desktop"] floating enable border normal
 for_window [class="Pamac.*"] floating enable
-for_window [class="Uget-gtk"] floating enable border none
+for_window [class="Uget-gtk"] floating enable border normal
 for_window [class="Boostnote"] floating enable border normal
 for_window [class="Thunar"] floating enable border normal
 for_window [class="Ristretto"] floating enable border normal
