@@ -10,7 +10,7 @@ if dein#load_state('~/.cache/dein')
  call dein#add('~/.cache/dein')
  call dein#add('Shougo/deoplete.nvim')
  call dein#add('vim-airline/vim-airline')
- call dein#add('mhartington/oceanic-next')
+ call dein#add('flazz/vim-colorschemes')
  call dein#add('scrooloose/nerdtree')
  call dein#add('tpope/vim-fugitive')
  call dein#add('chrisbra/csv.vim')
@@ -34,7 +34,7 @@ syntax enable
 
 " general config
 syntax on
-colorscheme OceanicNext
+colorscheme dracula
 
 autocmd BufReadPost *
   \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
@@ -67,7 +67,7 @@ let g:deoplete#enable_at_startup=1
 
 " airline config
 let g:airline_powerline_fonts=1
-let g:airline_theme='oceanicnext'
+let g:airline_theme='dracula'
 
 " jedi-vim config
 let g:jedi#auto_vim_configuration=0
