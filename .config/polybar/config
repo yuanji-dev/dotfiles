@@ -20,14 +20,14 @@ alert = ${xrdb:color1:#bd2c40}
 monitor = ${env:MONITOR:}
 dpi = ${xrdb:Xft.dpi:-1}
 width = 100%
-height = 32
+height = 48
 radius = 0.0
 fixed-center = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 3
+line-size = 4
 line-color = #f00
 
 border-size = 0
@@ -39,13 +39,12 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = Noto Sans:size=9;1
-font-1 = Noto Color Emoji:size=9;1
-font-2 = Noto Sans CJK SC:style=Regular:size=9;1
-font-3 = Noto Sans CJK JP:style=Regular:size=9;1
-font-4 = Font Awesome 5 Free:style=Regular:pixelsize=9:antialias=false;2
-font-5 = Font Awesome 5 Free:style=Solid:pixelsize=9:antialias=false;2
-font-6 = Font Awesome 5 Brands:style=Regular:pixelsize=9:antialias=false;2
+font-0 = Source Sans Pro:size=7;1
+font-1 = Noto Color Emoji:size=7;1
+font-2 = Noto Sans CJK JP:style=Regular:size=7;1
+font-3 = Font Awesome 5 Free:style=Regular:size=7;3
+font-4 = Font Awesome 5 Free:style=Solid:size=7;3
+font-5 = Font Awesome 5 Brands:style=Regular:size=7;3
 
 locale = ja_JP.UTF-8
 
@@ -53,11 +52,11 @@ modules-left = i3
 ;modules-center = mpd
 modules-right = cpu memory wlan temperature date
 
-tray-maxsize = 1000
+tray-maxsize = 42
 tray-position = center
 tray-padding = 1
-;tray-transparent = true
-;tray-background = #0063ff
+;tray-transparent = false
+;tray-background = ${colors.background}
 
 ;wm-restack = i3
 
@@ -90,7 +89,7 @@ pin-workspaces = true
 
 label-mode-padding = 2
 label-mode-foreground = ${xrdb:color0:}
-label-mode-background = ${xrdb:color3:}
+label-mode-background = ${xrdb:color4:}
 
 ; focused = Active workspace on focused monitor
 label-focused = %icon%

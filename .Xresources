@@ -1,5 +1,5 @@
-Xft.dpi: 192
-*dpi: 192
+Xft.dpi: 331
+*dpi: 331
 Xft.antialias: true
 Xft.hinting: true
 Xft.rgba: rgb
@@ -32,17 +32,20 @@ Xft.lcdfilter: lcddefault
 *.cursorColor:  #BFBFBF
 
 Xcursor.theme:  xcursor-breeze
-Xcursor.size:   0
+Xcursor.size:   48
 
-URxvt*font:         xft:Inconsolata:size=10,\
-                    xft:Noto Color Emoji:size=10,\
-                    xft:Noto Sans CJK SC:size=10
-URxvt*boldFont:     xft:Inconsolata:size=10,\
-                    xft:Noto Color Emoji:size=10,\
-                    xft:Noto Sans CJK SC:style=Bold:size=10
-URxvt*italicFont:   xft:Inconsolata:style=Italic:size=10,\
-                    xft:Noto Color Emoji:style=Italic:size=10,\
-                    xft:Noto Sans CJK SC:style=Italic:size=10
+URxvt*font:         xft:Inconsolata:size=8,\
+                    xft:Hack Nerd Font Mono:size=8,\
+                    xft:Noto Color Emoji:size=8,\
+                    xft:Noto Sans CJK SC:size=8
+URxvt*boldFont:     xft:Inconsolata:size=8,\
+                    xft:Hack Nerd Font Mono:stype=Bold:size=8,\
+                    xft:Noto Color Emoji:style=Bold:size=8,\
+                    xft:Noto Sans CJK SC:style=Bold:size=8
+URxvt*italicFont:   xft:Inconsolata:style=Italic:size=8,\
+                    xft:Hack Nerd Font Mono:style=Italic:size=8,\
+                    xft:Noto Color Emoji:style=Italic:size=8,\
+                    xft:Noto Sans CJK SC:style=Italic:size=8
 URxvt.depth:                      32
 URxvt*scrollBar:                  false
 URxvt*mouseWheelScrollPage:       false
