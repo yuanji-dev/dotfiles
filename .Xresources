@@ -34,15 +34,15 @@ Xft.lcdfilter: lcddefault
 Xcursor.theme:  xcursor-breeze
 Xcursor.size:   48
 
-URxvt*font:         xft:Inconsolata:size=8,\
+URxvt*font:         xft:Sarasa Mono SC:size=8,\
                     xft:Hack Nerd Font Mono:size=8,\
                     xft:Noto Color Emoji:size=8,\
                     xft:Noto Sans CJK SC:size=8
-URxvt*boldFont:     xft:Inconsolata:size=8,\
+URxvt*boldFont:     xft:Sarasa Mono SC:style=Bold:size=8,\
                     xft:Hack Nerd Font Mono:stype=Bold:size=8,\
                     xft:Noto Color Emoji:style=Bold:size=8,\
                     xft:Noto Sans CJK SC:style=Bold:size=8
-URxvt*italicFont:   xft:Inconsolata:style=Italic:size=8,\
+URxvt*italicFont:   xft:Sarasa Mono SC:style=Italic:size=8,\
                     xft:Hack Nerd Font Mono:style=Italic:size=8,\
                     xft:Noto Color Emoji:style=Italic:size=8,\
                     xft:Noto Sans CJK SC:style=Italic:size=8
