@@ -40,7 +40,7 @@ bindsym $mod+d exec --no-startup-id dmenu_recency
 bindsym $mod+space exec "rofi -combi-modi window,drun -show combi -show-icons -modi combi"
 
 # move floating window to center
-bindsym $mod+c move absolute position center
+bindsym $mod+c move position center
 
 ################################################################################################
 ## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
@@ -150,8 +150,8 @@ set $ws6 6
 set $ws7 7
 set $ws8 8
 
-workspace $ws1 output DP1
-workspace $ws2 output DP1
+workspace $ws1 output DP2
+workspace $ws2 output DP2
 workspace $ws3 output eDP1
 workspace $ws4 output eDP1
 
