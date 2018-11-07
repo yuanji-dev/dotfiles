@@ -55,8 +55,8 @@ modules-right = cpu memory wlan temperature battery date
 tray-maxsize = 44
 tray-position = center
 tray-padding = 1
-;tray-transparent = true
-;tray-background = ${colors.background}
+tray-transparent = true
+tray-background = ${colors.background}
 
 ;wm-restack = i3
 
