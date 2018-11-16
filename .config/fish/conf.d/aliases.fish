@@ -4,6 +4,7 @@ alias dev3 'mosh yuanji@doubandev3'
 alias balrog2 'mosh yuanji@balrog2'
 alias nano 'mosh --ssh="ssh -p 26114" root@nano.gimo.me'
 alias mio 'mosh --ssh="ssh -p 23333" mio@mio.gimo.me'
+alias shin 'mosh --ssh="ssh -p 23333" yuanji@shin.gimo.me'
 
 alias douvpn_on 'sudo systemctl restart openvpn-client@douban.service'
 alias douvpn_off 'sudo systemctl stop openvpn-client@douban.service'
