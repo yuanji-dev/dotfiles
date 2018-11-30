@@ -1,6 +1,7 @@
 [user]
 	name = Gimo
 	email = self@gimo.me
+	signingkey = A37F0B17A817B569
 [core]
 	excludesfile = /home/yuanji/.gitignore_global
 	pager = diff-so-fancy | less --tabs=4 -RFX
@@ -19,3 +20,5 @@
 	old = red bold
 	new = green bold
 	whitespace = red reverse
+[commit]
+	gpgsign = true
