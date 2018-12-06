@@ -11,6 +11,7 @@ items=(
     "misc"
     "nvim"
     "rofi"
+    "ssh"
     "termite"
 )
 
