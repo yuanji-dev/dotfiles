@@ -6,7 +6,6 @@ items=(
     "fontconfig"
     "git"
     "i3"
-    "i3blocks"
     "libinput-gestures"
     "misc"
     "nvim"
