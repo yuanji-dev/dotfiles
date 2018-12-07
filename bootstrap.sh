@@ -2,6 +2,7 @@
 items=(
     "ack"
     "compton"
+    "dunst"
     "fish"
     "fontconfig"
     "git"
