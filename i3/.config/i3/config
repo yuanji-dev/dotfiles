@@ -2,7 +2,7 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
-set $mod Mod4
+set $mod Mod1
 
 # set default desktop layout (default is tiling)
 # workspace_layout tabbed <stacking|tabbed>
@@ -21,7 +21,7 @@ bindsym $mod+n border normal
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Sans, Font Awesome 5 Free Solid, Font Awesome 5 Free Regular, Font Awesome 5 Brands Regular 6
+font pango:Sans, Font Awesome 5 Free Solid, Font Awesome 5 Free Regular, Font Awesome 5 Brands Regular 7
 
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
@@ -55,8 +55,8 @@ bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 ################################################################################################
 
 # Screen brightness controls
-# bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
-# bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
+bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
+bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
 
 # Start Applications
 bindsym $mod+O exec pcmanfm
@@ -414,7 +414,7 @@ bar {
     position top
     i3bar_command i3bar -t
     status_command i3blocks
-    height 48
+    height 24
     separator_symbol "|"
     strip_workspace_numbers yes
     colors {

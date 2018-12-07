@@ -1,5 +1,5 @@
-Xft.dpi: 331
-*dpi: 331
+Xft.dpi: 122
+*dpi: 122
 Xft.antialias: true
 Xft.hinting: true
 Xft.rgba: rgb
@@ -32,7 +32,7 @@ Xft.lcdfilter: lcddefault
 *.cursorColor:  #BFBFBF
 
 Xcursor.theme:  deepin
-Xcursor.size:   48
+Xcursor.size:   24
 
 URxvt*font:         xft:Sarasa Mono SC:size=8,\
                     xft:Hack Nerd Font Mono:size=8,\
