@@ -32,8 +32,8 @@ ESSID=$(/sbin/iwconfig $INTERFACE | perl -n -e'/ESSID:"(.*?)"/ && print $1')
 
 #------------------------------------------------------------------------
 
-echo " $ESSID($QUALITY%)" # full text
-echo " $ESSID($QUALITY%)" # short text
+echo -e " $ESSID($QUALITY%)" # full text
+echo -e " $ESSID($QUALITY%)" # short text
 
 # color
 if [[ $QUALITY -lt 60 ]]; then

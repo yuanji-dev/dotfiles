@@ -236,12 +236,14 @@ for_window [class="File-roller"] floating enable
 for_window [class="Catfish"] floating enable
 for_window [class="Fcitx-config-gtk3"] floating enable
 #for_window [class="VirtualBox Machine"] floating enable
-for_window [class="Gpicview"] floating enable
+for_window [class="Gpicview"] floating enable border normal
 for_window [class="Gnome-mplayer"] floating enable
 for_window [class="Nm-connection-editor"] floating enable
 for_window [class="Zeal"] floating enable border normal
 for_window [window_role="pop-up"] floating enable
 for_window [class="Yad"] floating enable
+for_window [class="calibre"] floating enable border normal
+for_window [class="insync.py"] floating enable
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
