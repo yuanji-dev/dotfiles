@@ -21,7 +21,7 @@ bindsym $mod+n border normal
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Sans, Font Awesome 5 Free Solid, Font Awesome 5 Free Regular, Font Awesome 5 Brands Regular 6
+font pango:Lato, Font Awesome 5 Free Solid, Font Awesome 5 Free Regular, Font Awesome 5 Brands Regular 6
 
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
@@ -244,9 +244,11 @@ for_window [window_role="pop-up"] floating enable
 for_window [class="Yad"] floating enable
 for_window [class="calibre"] floating enable border normal
 for_window [class="insync.py"] floating enable
+for_window [class="Anki"] floating enable border normal
 
 # switch to workspace with urgent window automatically
-for_window [urgent=latest] focus
+focus_on_window_activation focus
+#for_window [urgent=latest] focus
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -278,10 +280,10 @@ mode "$mode_system" {
 # Resize window (you can also use the mouse for that)
 bindsym $mod+r mode "resize"
 mode "resize" {
-        bindsym h resize grow width 5 px or 5 ppt
-        bindsym j resize grow height 5 px or 5 ppt
-        bindsym k resize shrink height 5 px or 5 ppt
-        bindsym l resize shrink width 5 px or 5 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize grow width 10 px or 10 ppt

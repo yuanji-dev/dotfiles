@@ -13,6 +13,6 @@ elif [ $host == 'xps' ]; then
   setxkbmap -option 'ctrl:swapcaps'
   xinput set-prop "DELL07E6:00 06CB:76AF Touchpad" "libinput Natural Scrolling Enabled" 1
   xinput set-prop "DELL07E6:00 06CB:76AF Touchpad" "libinput Tapping Enabled" 1
-  xinput set-prop "Designer Mouse Mouse" "libinput Left Handed Enabled" 1
+  xinput set-prop "Designer Mouse" "libinput Left Handed Enabled" 1
   libinput-gestures-setup restart
 fi
