@@ -42,6 +42,7 @@ border_bottom=1
 # The script may be called with -w and -c switches to specify thresholds,
 # see the script for details.
 [cpu_usage]
+label=
 interval=5
 
 # Memory usage
@@ -67,11 +68,11 @@ interval=1
 # The first parameter sets the step (and units to display)
 # The second parameter overrides the mixer selection
 # See the script for details.
-[volume]
-label=
-instance=Master
-interval=once
-signal=10
+# [volume]
+# label=
+# instance=Master
+# interval=once
+# signal=10
 
 # Battery indicator
 #

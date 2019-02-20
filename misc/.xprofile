@@ -9,4 +9,4 @@ export GDK_SCALE=2
 export GDK_DPI_SCALE=0.36
 
 export LIBVA_DRIVERS_PATH=/usr/lib/dri
-export LIBVA_DRIVER_NAME=iHD
+export LIBVA_DRIVER_NAME=i965
