@@ -27,7 +27,7 @@ INTERFACE="${BLOCK_INSTANCE:-wlp2s0}"
 
 #------------------------------------------------------------------------
 
-QUALITY=$(grep $INTERFACE /proc/net/wireless | awk '{ print int($3 * 100 / 70) }')
+QUALITY=$(sudo /bin/cat /proc/net/wireless | grep $INTERFACE | awk '{ print int($3 * 100 / 70) }')
 ESSID=$(/sbin/iwconfig $INTERFACE | perl -n -e'/ESSID:"(.*?)"/ && print $1')
 
 #------------------------------------------------------------------------

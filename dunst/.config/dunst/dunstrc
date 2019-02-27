@@ -29,7 +29,7 @@
     # the top and down respectively.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "800x10-40+80"
+    geometry = "400x10-40+60"
 
     # Show how many messages are currently hidden (because of geometry).
     indicate_hidden = yes
@@ -228,16 +228,16 @@
     # Xev might be helpful to find names for keys.
 
     # Close notification.
-    close = ctrl+space
+    close = ctrl+BackSpace
 
     # Close all notifications.
-    close_all = ctrl+shift+space
+    close_all = ctrl+Delete
 
     # Redisplay last message(s).
     # On the US keyboard layout "grave" is normally above TAB and left
     # of "1". Make sure this key actually exists on your keyboard layout,
     # e.g. check output of 'xmodmap -pke'
-    history = ctrl+grave
+    history = ctrl+shift+space
 
     # Context menu.
     context = ctrl+shift+period

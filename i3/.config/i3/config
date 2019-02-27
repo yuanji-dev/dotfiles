@@ -65,9 +65,9 @@ bindsym $mod+Shift+F3 exec gksu pcmanfm
 bindsym $mod+t exec --no-startup-id pkill compton
 bindsym $mod+Ctrl+t exec --no-startup-id compton -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
-bindsym Print exec --no-startup-id i3-scrot
-bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
-bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
+bindsym Mod4+Shift+3 exec --no-startup-id i3-scrot
+bindsym Mod4+Shift+4 --release exec --no-startup-id i3-scrot -w
+bindsym Mod4+Shift+5 --release exec --no-startup-id i3-scrot -s
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
 # focus_follows_mouse no
@@ -242,6 +242,8 @@ for_window [class="Nm-connection-editor"] floating enable
 for_window [class="Zeal"] floating enable border normal
 for_window [window_role="pop-up"] floating enable
 for_window [class="Yad"] floating enable
+for_window [class="Transmission-gtk"] floating enable
+for_window [class="Anki"] floating enable border normal
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -304,6 +306,7 @@ exec --no-startup-id pamac-tray
 exec --no-startup-id blueberry-tray
 exec --no-startup-id fcitx
 exec --no-startup-id dropbox
+exec --no-startup-id insync start
 exec --no-startup-id enpass
 exec --no-startup-id $HOME/.auto_settings/launch.sh
 exec --no-startup-id xset r rate 250 25
@@ -358,8 +361,8 @@ set_from_resource $term_color15    color15
 #############################
 
 # Set inner/outer gaps
-gaps inner 5
-gaps outer -4
+gaps inner 1 #5
+gaps outer 0 #-4
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
 # gaps inner|outer current|all set|plus|minus <px>

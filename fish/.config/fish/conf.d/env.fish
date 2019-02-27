@@ -1,5 +1,6 @@
 set -g theme_nerd_fonts yes
 set -g theme_color_scheme dracula
+set -g fish_emoji_width 2
 set -gx EDITOR vim
 set -gx PATH $HOME/.local/bin $PATH
 set -gx GOPATH $HOME/Projects/gobook

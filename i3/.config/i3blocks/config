@@ -33,10 +33,6 @@ border_left=0
 border_right=0
 border_bottom=1
 
-[xpericheck]
-command=curl -sSL https://xpericheck.com/cda/1313-2491 | grep -q '52.0' && printf " 有更新\n 有更新\n#FF5555" || echo " 没有更新";
-interval=60
-
 # CPU usage
 #
 # The script may be called with -w and -c switches to specify thresholds,
