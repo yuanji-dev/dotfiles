@@ -65,7 +65,7 @@ bindsym $mod+Shift+F3 exec gksu pcmanfm
 bindsym $mod+t exec --no-startup-id pkill compton
 bindsym $mod+Ctrl+t exec --no-startup-id compton -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
-bindsym Print exec --no-startup-id i3-scrot
+bindsym Print exec --no-startup-id flameshot gui
 bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
 bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
@@ -286,10 +286,10 @@ mode "resize" {
         bindsym h resize shrink width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize grow width 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
         bindsym Down resize grow height 10 px or 10 ppt
         bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize shrink width 10 px or 10 ppt
+        bindsym Left resize shrink width 10 px or 10 ppt
 
         # exit resize mode: Enter or Escape
         bindsym Return mode "default"

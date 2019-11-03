@@ -55,7 +55,7 @@
     fixed-height: 0;
     border:       2px 0px 0px ;
     border-color: @separatorcolor;
-    spacing:      2px ;
+    spacing:      10px ;
     scrollbar:    true;
     padding:      2px 0px 0px ;
 }

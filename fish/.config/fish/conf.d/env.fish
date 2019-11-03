@@ -1,8 +1,8 @@
 set -g theme_nerd_fonts yes
 set -g theme_color_scheme dracula
 set -gx EDITOR vim
-set -gx PATH $HOME/.local/bin $PATH
-set -gx GOPATH $HOME/Projects/gobook
+set -gx GOPATH $HOME/.go
+set -gx PATH $HOME/.local/bin $HOME/.go/bin $GOPATH/bin /opt/android-sdk/build-tools/28.0.3 /usr/lib/jvm/default/bin $PATH
 set -gx fish_emoji_width 2
 
 if status --is-interactive

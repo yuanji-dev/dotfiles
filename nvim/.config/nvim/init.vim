@@ -9,18 +9,20 @@ if dein#load_state('~/.cache/dein')
 
  call dein#add('~/.cache/dein')
  call dein#add('Shougo/deoplete.nvim')
+ call dein#add('deoplete-plugins/deoplete-go', {'build': 'make'})
+ call dein#add('deoplete-plugins/deoplete-jedi')
  call dein#add('vim-airline/vim-airline')
  call dein#add('vim-airline/vim-airline-themes')
  call dein#add('flazz/vim-colorschemes')
  call dein#add('scrooloose/nerdtree')
  call dein#add('tpope/vim-fugitive')
  call dein#add('chrisbra/csv.vim')
- call dein#add('zchee/deoplete-jedi')
  call dein#add('davidhalter/jedi-vim')
  call dein#add('majutsushi/tagbar')
  call dein#add('w0rp/ale')
  call dein#add('chrisbra/Colorizer')
  call dein#add('mattn/emmet-vim')
+ call dein#add('fatih/vim-go')
  if !has('nvim')
    call dein#add('roxma/nvim-yarp')
    call dein#add('roxma/vim-hug-neovim-rpc')
@@ -51,6 +53,13 @@ set shiftwidth=4
 set cc=100
 set cursorline
 set cursorcolumn
+set autowrite
+
+autocmd FileType go nmap <leader>b  <Plug>(go-build)
+" autocmd FileType go nmap <leader>r  <Plug>(go-run)
+" https://github.com/fatih/vim-go/issues/1412
+autocmd FileType go nmap <leader>r :w<CR>:vsplit <bar> terminal go run %<CR>
+autocmd FileType go nmap <Leader>d  <Plug>(go-def-type-vertical)
 
 let mapleader="\<SPACE>"
 
@@ -65,6 +74,7 @@ let g:python_host_prog='/usr/bin/python2'
 
 " deoplete config
 let g:deoplete#enable_at_startup=1
+autocmd CompleteDone * silent! pclose!
 
 " airline config
 let g:airline_powerline_fonts=1
@@ -89,3 +99,7 @@ nmap <Leader>t :TagbarToggle<CR>
 
 " ale config
 let g:ale_linters = {'python': ['pylint']}
+
+" vim-go
+let g:go_term_mode = "split"
+let g:go_term_height = 10
