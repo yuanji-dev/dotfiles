@@ -37,6 +37,7 @@ SAVEHIST=1000000
 
 autoload -U compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' menu select
 
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
