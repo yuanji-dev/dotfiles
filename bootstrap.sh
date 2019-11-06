@@ -3,7 +3,7 @@ items=(
     "ack"
     "compton"
     "dunst"
-    "fish"
+    "zsh"
     "fontconfig"
     "git"
     "i3"
