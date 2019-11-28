@@ -15,4 +15,5 @@ elif [ $host == 'xps' ]; then
   xinput set-prop "DELL07E6:00 06CB:76AF Touchpad" "libinput Tapping Enabled" 1
   xinput set-prop "Designer Mouse" "libinput Left Handed Enabled" 1
   libinput-gestures-setup restart
+  feh --bg-max .cache/himawaripy/
 fi
