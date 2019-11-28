@@ -5,8 +5,16 @@ import re
 import json
 import urllib.request
 
+from concurrent import futures
+
 
 RE_FUND_INFO = re.compile('jsonpgz\((.*)\)')
+
+FUND_LIST = {
+    '000311': '沪深',
+    '110003': '上证',
+    '110022': '消费',
+}
 
 def get_info(fid):
     with urllib.request.urlopen('http://fundgz.1234567.com.cn/js/%s.js' % fid) as f:
@@ -17,14 +25,16 @@ def get_info(fid):
             data = json.loads(data_str)
             name = data['name']
             gszzl = data['gszzl']
-            return dict(name=name, gszzl=gszzl)
+            return dict(name=name, short_name=FUND_LIST[fid], gszzl=gszzl)
+
+def main():
+    infos = []
+    with futures.ThreadPoolExecutor(3) as executor:
+        for d in executor.map(get_info, FUND_LIST.keys()):
+            infos.append('{name}:{gszzl}'.format(name=d['short_name'], gszzl=d['gszzl']))
+    print(' '.join(infos))
+    print(' '.join(infos))
+
 
 if __name__ == "__main__":
-    infos = []
-    d_000311 = get_info('000311')
-    d_000478 = get_info('110003')
-    d_110022 = get_info('110022')
-    for d in [d_000311, d_000478, d_110022]:
-        infos.append('{name}:{gszzl}'.format(name=d['name'][0], gszzl=d['gszzl']))
-    print(' '.join(infos))
-    print(' '.join(infos))
+    main()
