@@ -48,16 +48,21 @@ bindkey '^[[B' history-substring-search-down
 #####################################################################
 #
 export EDITOR=vim
+#export BROWSER=chromium
 export GOPATH=$HOME/.go
 export PATH=$PATH:$HOME/.local/bin:$GOPATH/bin
+local SYMBOLS=(🍣 🍜 🙏 🙈 🙉 🙊)
+export PURE_PROMPT_SYMBOL=$(echo -n ${SYMBOLS[$RANDOM%${#SYMBOLS[@]}+1]})
 
 alias ls='exa'
 alias ll='ls -alh'
 alias shin='mosh shin'
 alias edo='mosh edo'
 alias ll='ls -alh'
+alias open='a -e xdg-open'
 alias cat=bat
 alias vim=nvim
+alias v='f -e nvim'
 alias pbcopy='xsel --clipboard --input'
 alias webfs='webfsd -F -r'
 alias rei8='sudo systemctl restart i8kmon.service'
@@ -69,3 +74,5 @@ function zsh_stats() {
 
 eval `keychain --eval --agents ssh --quiet id_ed25519`
 eval `keychain --eval --agents gpg --quiet 3CB6EA7C55827AAD`
+
+eval "$(fasd --init auto)"
