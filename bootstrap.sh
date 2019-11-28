@@ -1,7 +1,7 @@
 #! /usr/bin/bash
 items=(
     "ack"
-    "compton"
+    "picom"
     "dunst"
     "zsh"
     "fontconfig"
