@@ -38,6 +38,7 @@ SAVEHIST=1000000
 autoload -U compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' menu select
+zstyle ':completion:*:processes' command "ps -u $USER -o pid,stat,%cpu,%mem,cputime,command"
 
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
@@ -47,10 +48,12 @@ bindkey '^[[B' history-substring-search-down
 # common
 #####################################################################
 #
-export EDITOR=vim
+export EDITOR=nvim
 #export BROWSER=chromium
 export GOPATH=$HOME/.go
-export PATH=$PATH:$HOME/.local/bin:$GOPATH/bin
+export NPM_PACKAGES=$HOME/.npm-packages
+export PATH=$PATH:$HOME/.local/bin:$GOPATH/bin:$NPM_PACKAGES/bin
+export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
 local SYMBOLS=(🍣 🍜 🙏 🙈 🙉 🙊)
 export PURE_PROMPT_SYMBOL=$(echo -n ${SYMBOLS[$RANDOM%${#SYMBOLS[@]}+1]})
 
@@ -63,6 +66,7 @@ alias open='a -e xdg-open'
 alias cat=bat
 alias vim=nvim
 alias v='f -e nvim'
+alias sudo='sudo '
 alias pbcopy='xsel --clipboard --input'
 alias webfs='webfsd -F -r'
 alias rei8='sudo systemctl restart i8kmon.service'
