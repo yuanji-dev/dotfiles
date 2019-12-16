@@ -82,9 +82,9 @@ interval=30
 
 # Funds
 #
-[funds]
-label=
-interval=60
+#[funds]
+#label=
+#interval=10
 
 # Date Time
 #

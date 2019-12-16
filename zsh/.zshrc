@@ -40,6 +40,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' menu select
 zstyle ':completion:*:processes' command "ps -u $USER -o pid,stat,%cpu,%mem,cputime,command"
 
+bindkey -e
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
@@ -49,6 +50,7 @@ bindkey '^[[B' history-substring-search-down
 #####################################################################
 #
 export EDITOR=nvim
+export TERM=xterm-256color
 #export BROWSER=chromium
 export GOPATH=$HOME/.go
 export NPM_PACKAGES=$HOME/.npm-packages
@@ -69,7 +71,6 @@ alias v='f -e nvim'
 alias sudo='sudo '
 alias pbcopy='xsel --clipboard --input'
 alias webfs='webfsd -F -r'
-alias rei8='sudo systemctl restart i8kmon.service'
 alias reiwd='sudo systemctl restart iwd.service'
 
 function zsh_stats() {

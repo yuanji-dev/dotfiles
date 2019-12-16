@@ -55,8 +55,8 @@ bindsym XF86AudioMute exec "pactl set-sink-mute 0 toggle"
 ################################################################################################
 
 # Screen brightness controls
-bindsym XF86MonBrightnessUp exec "light -A 5; notify-send 'brightness up'"
-bindsym XF86MonBrightnessDown exec "light -U 5; notify-send 'brightness down'"
+bindsym XF86MonBrightnessUp exec "light -A 1; notify-send 'brightness up'"
+bindsym XF86MonBrightnessDown exec "light -U 1; notify-send 'brightness down'"
 
 # Start Applications
 bindsym $mod+O exec pcmanfm
@@ -142,6 +142,8 @@ exec --no-startup-id termite --name flash_term
 for_window [instance="flash_term"] floating enable
 for_window [instance="flash_term"] move scratchpad
 bindsym $mod+t [instance="flash_term"] scratchpad show
+
+bindsym $mod+g "move container workspace temp; bar mode toggle; workspace temp; move left"
 
 # Workspace names
 # to display names or symbols instead of plain workspace numbers you can use
@@ -251,6 +253,7 @@ for_window [class="Yad"] floating enable
 for_window [class="calibre"] floating enable border normal
 for_window [class="insync.py"] floating enable
 for_window [class="Anki"] floating enable border normal
+for_window [class="electrum"] floating enable border normal
 
 # switch to workspace with urgent window automatically
 focus_on_window_activation focus
