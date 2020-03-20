@@ -55,8 +55,8 @@ bindsym XF86AudioMute exec "pactl set-sink-mute 0 toggle"
 ################################################################################################
 
 # Screen brightness controls
-bindsym XF86MonBrightnessUp exec "light -A 1; notify-send 'brightness up'"
-bindsym XF86MonBrightnessDown exec "light -U 1; notify-send 'brightness down'"
+bindsym XF86MonBrightnessUp exec "light -A 5; notify-send BrightnessUp $(light -G)"
+bindsym XF86MonBrightnessDown exec "light -U 5; notify-send BrightnessDown $(light -G)"
 
 # Start Applications
 bindsym $mod+O exec pcmanfm
