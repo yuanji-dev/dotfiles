@@ -3,10 +3,10 @@
 #####################################################################
 
 # Check if zplug is installed
-#if [[ ! -d ~/.zplug ]]; then
-#    git clone https://github.com/zplug/zplug ~/.zplug
-#    source ~/.zplug/init.zsh && zplug update --self
-#fi
+if [[ ! -d ~/.zplug ]]; then
+    git clone https://github.com/zplug/zplug ~/.zplug
+    source ~/.zplug/init.zsh && zplug update --self
+fi
 
 source ~/.zplug/init.zsh
 
@@ -17,12 +17,12 @@ zplug "mafredri/zsh-async"
 zplug "sindresorhus/pure"
 
 # Install plugins if there are plugins that have not been installed
-#if ! zplug check --verbose; then
-#    printf "Install? [y/N]: "
-#    if read -q; then
-#        echo; zplug install
-#    fi
-#fi
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
 
 # Then, source plugins and add commands to $PATH
 zplug load
@@ -52,15 +52,14 @@ bindkey '^[[B' history-substring-search-down
 
 source ~/.secrets
 
-export EDITOR=nvim
+export EDITOR=vim
 export TERM=xterm-256color
-#export BROWSER=chromium
+export BROWSER=chromium
 export GOPATH=$HOME/.go
 export NPM_PACKAGES=$HOME/.npm-packages
 export PATH=$PATH:$HOME/.local/bin:$GOPATH/bin:$NPM_PACKAGES/bin
 export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
-#local SYMBOLS=(🍣 🍜 🙏 🙈 🙉 🙊)
-#export PURE_PROMPT_SYMBOL=$(echo -n ${SYMBOLS[$RANDOM%${#SYMBOLS[@]}+1]})
+export XDG_CONFIG_HOME=$HOME/.config
 
 alias ls='exa'
 alias ll='ls -alh'
@@ -69,8 +68,7 @@ alias edo='mosh edo'
 alias ll='ls -alh'
 alias open='a -e xdg-open'
 alias cat=bat
-alias vim=nvim
-alias v='f -e nvim'
+alias v='f -e vim'
 alias sudo='sudo '
 alias pbcopy='xsel --clipboard --input'
 alias webfs='webfsd -F -r'

@@ -35,3 +35,5 @@ ssh/.ssh/*
 etc
 fishd.*
 fish_variables
+.secrets
+fonts/

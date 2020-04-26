@@ -1,18 +1,17 @@
 #! /usr/bin/bash
 items=(
-    "ack"
-    "picom"
-    "dunst"
     "zsh"
-    "fontconfig"
     "git"
-    "i3"
-    "libinput-gestures"
+    "tig"
+    #"libinput-gestures"
     "misc"
-    "nvim"
-    "rofi"
+    #"nvim"
     "ssh"
-    "termite"
+    "chromium"
+    "gnupg"
+    "fonts"
+    "fontconfig"
+    "pacman"
 )
 
 for item in "${items[@]}" ; do
