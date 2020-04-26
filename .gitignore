@@ -37,3 +37,5 @@ fishd.*
 fish_variables
 .secrets
 fonts/
+rime/.config/fcitx/rime/*
+!rime/.config/fcitx/rime/*.yaml

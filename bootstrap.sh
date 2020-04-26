@@ -12,6 +12,7 @@ items=(
     "fonts"
     "fontconfig"
     "pacman"
+    "rime"
 )
 
 for item in "${items[@]}" ; do
