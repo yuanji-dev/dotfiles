@@ -18,6 +18,7 @@
 
 [delta]
     features = decorations
+    syntax-theme = Dracula
 
 [delta "interactive"]
     keep-plus-minus-markers = false
