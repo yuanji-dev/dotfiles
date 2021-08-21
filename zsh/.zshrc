@@ -78,3 +78,7 @@ eval `keychain --eval --agents ssh --quiet id_ed25519`
 eval `keychain --eval --agents gpg --quiet 3CB6EA7C55827AAD`
 
 eval "$(fasd --init auto)"
+
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
