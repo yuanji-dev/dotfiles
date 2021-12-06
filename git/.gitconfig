@@ -19,6 +19,7 @@
 [delta]
     features = decorations
     syntax-theme = Dracula
+    side-by-side = true
 
 [delta "interactive"]
     keep-plus-minus-markers = false
@@ -34,3 +35,6 @@
 
 [commit]
     gpgsign = true
+
+[init]
+    defaultBranch = main
