@@ -9,6 +9,7 @@ items=(
     "gnupg"
     "pacman"
     "tmux"
+    "nvim"
 )
 
 for item in "${items[@]}" ; do

@@ -39,3 +39,4 @@ fish_variables
 fonts/
 rime/.config/fcitx/rime/*
 !rime/.config/fcitx/rime/*.yaml
+nvim/.config/nvim/plugin
