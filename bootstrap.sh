@@ -4,7 +4,7 @@ items=(
     "git"
     "tig"
     "ssh"
-    "chrome"
+    #"chrome"
     "misc"
     "gnupg"
     "pacman"

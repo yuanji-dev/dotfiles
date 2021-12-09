@@ -1,10 +1,13 @@
 -- TODO
 -- * Remember last position
-
+-- * Popup border ( https://github.com/hrsh7th/nvim-cmp/pull/472 )
+-- * Format lua files ( https://www.chrisatmachine.com/Neovim/28-neovim-lua-development/ )
 -- basic mappings
 vim.g.mapleader = " "
 vim.api.nvim_set_keymap( 'i', 'jj', '<ESC>', {noremap = true} )
 vim.api.nvim_set_keymap( 'n', '<ESC><ESC>', ':nohlsearch<CR><Esc>', {noremap = true} )
+vim.api.nvim_set_keymap( 'n', '<Leader>t', ':SymbolsOutline<CR>', {noremap = true} )
+vim.api.nvim_set_keymap( 'n', '<Leader>x', ':TroubleToggle<CR>', {noremap = true} )
 
 -- basic settings
 vim.o.ignorecase = true
@@ -18,6 +21,12 @@ vim.o.cursorline = true
 vim.o.cursorcolumn = true
 vim.o.autowrite = true
 
+-- symbols_outline settings
+vim.g.symbols_outline = {
+    relative_width = true,
+    width = 50
+}
+
 -- tokyonight settings
 vim.g.tokyonight_style = "storm"
 vim.g.tokyonight_italic_functions = true
@@ -28,14 +37,27 @@ vim.cmd[[colorscheme tokyonight]]
 -- lualine settings
 require('lualine').setup{
   options = {
-    theme = 'tokyonight'
+    theme = 'tokyonight',
+  },
+  extensions = {
+    'symbols-outline'
   }
 }
 
 -- nvim-cmp settings
 vim.opt.completeopt = "menu,menuone,noselect"
 local cmp = require'cmp'
+local lspkind = require('lspkind')
 cmp.setup({
+  formatting = {
+    format = lspkind.cmp_format({
+      with_text = true,
+      menu = ({
+        buffer = "[Buffer]",
+        nvim_lsp = "[LSP]",
+      })
+    }),
+  },
   snippet = {
     -- REQUIRED - you must specify a snippet engine
     expand = function(args)
@@ -101,7 +123,7 @@ cmp.setup.cmdline(':', {
 -- nvim-lsp-installer settings
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
-local on_attach = function(client, bufnr)
+local on_attach = function(_, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
@@ -149,7 +171,7 @@ lsp_installer.on_server_ready(function(server)
       },
       diagnostics = {
         -- Get the language server to recognize the `vim` global
-        globals = {'vim'},
+        globals = {'vim', 'runtime_path'},
       },
       workspace = {
         -- Make the server aware of Neovim runtime files

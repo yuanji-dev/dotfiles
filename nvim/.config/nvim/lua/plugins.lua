@@ -1,7 +1,11 @@
--- Only required if you have packer configured as `opt`
-vim.cmd [[packadd packer.nvim]]
+local fn = vim.fn
+local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+if fn.empty(fn.glob(install_path)) > 0 then
+  Packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+end
 
-return require('packer').startup(function()
+
+return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
   use 'folke/tokyonight.nvim'
@@ -16,10 +20,27 @@ return require('packer').startup(function()
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-cmdline'
   use 'hrsh7th/nvim-cmp'
+  use 'onsails/lspkind-nvim'
+  use 'simrat39/symbols-outline.nvim'
+  use {
+    "folke/trouble.nvim",
+    requires = "kyazdani42/nvim-web-devicons",
+    config = function()
+      require("trouble").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
+    end
+  }
 
   use {
     'prettier/vim-prettier',
     run = 'yarn install --frozen-lockfile --production',
     ft = {'javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'}
   }
+  if Packer_bootstrap then
+    require('packer').sync()
+  end
+
 end)
