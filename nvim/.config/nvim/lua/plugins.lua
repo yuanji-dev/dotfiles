@@ -20,6 +20,7 @@ return require('packer').startup(function(use)
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-cmdline'
   use 'hrsh7th/nvim-cmp'
+  use 'hrsh7th/vim-vsnip'
   use 'onsails/lspkind-nvim'
   use 'simrat39/symbols-outline.nvim'
   use {
@@ -34,13 +35,11 @@ return require('packer').startup(function(use)
     end
   }
 
-  use {
-    'prettier/vim-prettier',
-    run = 'yarn install --frozen-lockfile --production',
-    ft = {'javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'}
-  }
-
   use 'farmergreg/vim-lastplace'
+
+  use({ "jose-elias-alvarez/null-ls.nvim",
+    requires = {"nvim-lua/plenary.nvim", "neovim/nvim-lspconfig"}
+  })
 
   if Packer_bootstrap then
     require('packer').sync()

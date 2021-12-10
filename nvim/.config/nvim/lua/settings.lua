@@ -1,7 +1,8 @@
 -- TODO
--- * Remember last position
 -- * Popup border ( https://github.com/hrsh7th/nvim-cmp/pull/472 )
+-- * Snippet ( https://github.com/hrsh7th/vim-vsnip )
 -- * Format lua files ( https://www.chrisatmachine.com/Neovim/28-neovim-lua-development/ )
+
 -- basic mappings
 vim.g.mapleader = " "
 vim.api.nvim_set_keymap( 'i', 'jj', '<ESC>', {noremap = true} )
@@ -186,3 +187,21 @@ lsp_installer.on_server_ready(function(server)
   end
   server:setup(opts)
 end)
+
+require("null-ls").config({
+    -- you must define at least one source for the plugin to work
+    sources = {
+      require("null-ls").builtins.formatting.prettier.with({
+        prefer_local = "node_modules/.bin"
+      }),
+      require("null-ls").builtins.diagnostics.shellcheck,
+      require("null-ls").builtins.code_actions.shellcheck,
+      require("null-ls").builtins.formatting.stylua,
+
+    }
+})
+require("lspconfig")["null-ls"].setup({
+    -- see the nvim-lspconfig documentation for available configuration options
+    on_attach = on_attach,
+    capabilities = capabilities
+})
