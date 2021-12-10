@@ -39,6 +39,9 @@ return require('packer').startup(function(use)
     run = 'yarn install --frozen-lockfile --production',
     ft = {'javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'}
   }
+
+  use 'farmergreg/vim-lastplace'
+
   if Packer_bootstrap then
     require('packer').sync()
   end
