@@ -190,7 +190,7 @@ lsp_installer.on_server_ready(function(server)
   server:setup(opts)
 end)
 
-require("null-ls").config({
+require("null-ls").setup({
   -- you must define at least one source for the plugin to work
   sources = {
     require("null-ls").builtins.formatting.prettier.with({
@@ -200,9 +200,5 @@ require("null-ls").config({
     require("null-ls").builtins.code_actions.shellcheck,
     require("null-ls").builtins.formatting.stylua,
   },
-})
-require("lspconfig")["null-ls"].setup({
-  -- see the nvim-lspconfig documentation for available configuration options
   on_attach = on_attach,
-  capabilities = capabilities,
 })
