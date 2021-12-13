@@ -42,6 +42,10 @@ return require("packer").startup(function(use)
   })
 
   use("farmergreg/vim-lastplace")
+  use({
+    "nvim-telescope/telescope.nvim",
+    requires = { { "nvim-lua/plenary.nvim" } },
+  })
 
   use({ "jose-elias-alvarez/null-ls.nvim", requires = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" } })
 

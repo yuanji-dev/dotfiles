@@ -8,6 +8,7 @@ vim.api.nvim_set_keymap("i", "jj", "<ESC>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<ESC><ESC>", ":nohlsearch<CR><Esc>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<Leader>t", ":SymbolsOutline<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<Leader>x", ":TroubleToggle<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>p", ":Telescope find_files<CR>", { noremap = true })
 
 -- basic settings
 vim.o.ignorecase = true
