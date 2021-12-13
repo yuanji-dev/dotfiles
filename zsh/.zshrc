@@ -50,26 +50,25 @@ bindkey '^[[B' history-substring-search-down
 # common
 #####################################################################
 
-export EDITOR=vim
+export EDITOR=nvim
 export TERM=xterm-256color
 export BROWSER=google-chrome-stable
 export GOPATH=$HOME/.go
-export NPM_PACKAGES=$HOME/.npm-packages
-export PATH=$PATH:$HOME/.local/bin:$GOPATH/bin:$NPM_PACKAGES/bin
-export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
+export PATH=$PATH:$HOME/.local/bin:$GOPATH/bin
 export XDG_CONFIG_HOME=$HOME/.config
 
 alias ls='exa'
 alias ll='ls -alh'
-alias shin='mosh shin'
-alias edo='mosh edo'
-alias ll='ls -alh'
-alias open='xdg-open'
 alias cat=bat
-alias v='f -e vim'
 alias sudo='sudo '
-alias pbcopy='wl-copy'
 alias vim='nvim'
+alias v='f -e nvim'
+if ! command -v pbcopy &> /dev/null; then
+  alias pbcopy='wl-copy'
+fi
+if ! command -v open &> /dev/null; then
+  alias open='xdg-open'
+fi
 
 function zsh_stats() {
   fc -l 1 | awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl |  head -n20
