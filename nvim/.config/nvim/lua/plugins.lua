@@ -48,6 +48,10 @@ return require("packer").startup(function(use)
   })
 
   use({ "jose-elias-alvarez/null-ls.nvim", requires = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" } })
+  use({
+    "nvim-treesitter/nvim-treesitter",
+    run = ":TSUpdate",
+  })
 
   if Packer_bootstrap then
     require("packer").sync()

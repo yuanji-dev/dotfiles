@@ -21,6 +21,7 @@ vim.o.colorcolumn = "100"
 vim.o.cursorline = true
 vim.o.cursorcolumn = true
 vim.o.autowrite = true
+vim.cmd([[autocmd BufWritePre *.go lua vim.lsp.buf.formatting_sync(nil, 1000)]])
 
 -- symbols_outline settings
 vim.g.symbols_outline = {
@@ -188,6 +189,16 @@ lsp_installer.on_server_ready(function(server)
       },
     }
   end
+  if server.name == "gopls" then
+    -- opts.settings = {
+    --   golsp = {
+    --     useplaceholders = true,
+    --   },
+    -- }
+    opts.init_options = {
+      usePlaceholders = true,
+    }
+  end
   server:setup(opts)
 end)
 
@@ -200,6 +211,7 @@ require("null-ls").setup({
     require("null-ls").builtins.diagnostics.shellcheck,
     require("null-ls").builtins.code_actions.shellcheck,
     require("null-ls").builtins.formatting.stylua,
+    require("null-ls").builtins.diagnostics.hadolint,
   },
   on_attach = on_attach,
 })
