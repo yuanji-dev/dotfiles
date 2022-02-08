@@ -4,7 +4,6 @@
     signingkey = 3CB6EA7C55827AAD
 
 [core]
-    excludesfile = /home/yuanji/.gitignore_global
     quotepath = false
 
 [pager]
@@ -19,7 +18,7 @@
 [delta]
     features = decorations
     syntax-theme = Dracula
-    side-by-side = true
+    side-by-side = false
 
 [delta "interactive"]
     keep-plus-minus-markers = false
