@@ -26,7 +26,10 @@ return require("packer").startup(function(use)
   use("hrsh7th/cmp-path")
   use("hrsh7th/cmp-cmdline")
   use("hrsh7th/nvim-cmp")
+  use("hrsh7th/cmp-vsnip")
   use("hrsh7th/vim-vsnip")
+  use("hrsh7th/vim-vsnip-integ")
+  use("rafamadriz/friendly-snippets")
   use("onsails/lspkind-nvim")
   use("simrat39/symbols-outline.nvim")
   use({
@@ -40,13 +43,11 @@ return require("packer").startup(function(use)
       })
     end,
   })
-
   use("farmergreg/vim-lastplace")
   use({
     "nvim-telescope/telescope.nvim",
     requires = { { "nvim-lua/plenary.nvim" } },
   })
-
   use({ "jose-elias-alvarez/null-ls.nvim", requires = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" } })
   use({
     "nvim-treesitter/nvim-treesitter",
