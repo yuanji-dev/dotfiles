@@ -8,6 +8,7 @@ vim.api.nvim_set_keymap("n", "<ESC><ESC>", ":nohlsearch<CR><Esc>", { noremap = t
 vim.api.nvim_set_keymap("n", "<Leader>t", ":SymbolsOutline<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<Leader>x", ":TroubleToggle<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<Leader>p", ":Telescope find_files<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<C-p>", "<Plug>MarkdownPreviewToggle", { noremap = false })
 
 -- basic settings
 vim.o.ignorecase = true
@@ -20,7 +21,7 @@ vim.o.colorcolumn = "100"
 vim.o.cursorline = true
 vim.o.cursorcolumn = true
 vim.o.autowrite = true
-vim.cmd([[autocmd BufWritePre *.go lua vim.lsp.buf.formatting_sync(nil, 1000)]])
+vim.cmd([[autocmd BufWritePre *.go,*.md,*.lua lua vim.lsp.buf.formatting_sync(nil, 1000)]])
 
 -- symbols_outline settings
 vim.g.symbols_outline = {

@@ -53,6 +53,7 @@ return require("packer").startup(function(use)
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
   })
+   use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install'}
 
   if Packer_bootstrap then
     require("packer").sync()
