@@ -32,7 +32,7 @@ zplug load
 #####################################################################
 
 HISTFILE=~/.zsh_history
-HISTSIZE=1000
+HISTSIZE=1000000
 SAVEHIST=1000000
 setopt EXTENDED_HISTORY
 
@@ -82,3 +82,9 @@ eval "$(fasd --init auto)"
 export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
+export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
