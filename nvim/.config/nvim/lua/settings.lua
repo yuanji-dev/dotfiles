@@ -8,6 +8,9 @@ vim.api.nvim_set_keymap("n", "<ESC><ESC>", ":nohlsearch<CR><Esc>", { noremap = t
 vim.api.nvim_set_keymap("n", "<Leader>t", ":SymbolsOutline<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<Leader>x", ":TroubleToggle<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<Leader>p", ":Telescope find_files<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>ff", ":Telescope find_files<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>fg", ":Telescope live_grep<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Leader>fb", ":Telescope buffers<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<C-p>", "<Plug>MarkdownPreviewToggle", { noremap = false })
 
 -- basic settings
@@ -167,7 +170,7 @@ local on_attach = function(_, bufnr)
   buf_set_keymap("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
   buf_set_keymap("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
   buf_set_keymap("n", "<space>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
-  buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+  buf_set_keymap("n", "<space>bf", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
 end
 
 local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
@@ -208,6 +211,18 @@ lsp_installer.on_server_ready(function(server)
     -- }
     opts.init_options = {
       usePlaceholders = true,
+    }
+  end
+  if server.name == "yamlls" then
+    opts.settings = {
+      yaml = {
+        schemas = {
+          ["https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.19.1-standalone-strict/all.json"] = {
+            "**/*.k8s.yaml",
+            "**/*.k8s.yml",
+          },
+        },
+      },
     }
   end
   server:setup(opts)
