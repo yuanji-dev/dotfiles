@@ -5,32 +5,19 @@
 
 [core]
     quotepath = false
-
-[pager]
-    diff = delta
-    log = delta
-    reflog = delta
-    show = delta
+    pager = delta
 
 [interactive]
-    diffFilter = delta --color-only --features=interactive
+    diffFilter = delta --color-only
 
 [delta]
-    features = decorations
-    syntax-theme = Dracula
-    side-by-side = false
+    navigate = true
 
-[delta "interactive"]
-    keep-plus-minus-markers = false
+[merge]
+    conflictstyle = diff3
 
-[delta "decorations"]
-    commit-decoration-style = blue ol
-    commit-style = raw
-    file-style = omit
-    hunk-header-decoration-style = blue box
-    hunk-header-file-style = red
-    hunk-header-line-number-style = "#067a00"
-    hunk-header-style = file line-number syntax
+[diff]
+    colorMoved = default
 
 [commit]
     gpgsign = true

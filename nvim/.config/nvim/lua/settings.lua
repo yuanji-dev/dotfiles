@@ -24,7 +24,7 @@ vim.o.colorcolumn = "100"
 vim.o.cursorline = true
 vim.o.cursorcolumn = true
 vim.o.autowrite = true
-vim.cmd([[autocmd BufWritePre *.go,*.md,*.lua lua vim.lsp.buf.formatting_sync(nil, 1000)]])
+vim.cmd([[autocmd BufWritePre *.go,*.md,*.lua,*.yml,*.yaml lua vim.lsp.buf.formatting_sync(nil, 1000)]])
 
 -- symbols_outline settings
 vim.g.symbols_outline = {
@@ -238,6 +238,10 @@ require("null-ls").setup({
     require("null-ls").builtins.code_actions.shellcheck,
     require("null-ls").builtins.formatting.stylua,
     require("null-ls").builtins.diagnostics.hadolint,
+    require("null-ls").builtins.diagnostics.textlint.with({
+      prefer_local = "node_modules/.bin",
+      filetypes = { "markdown" },
+    }),
   },
   on_attach = on_attach,
 })
