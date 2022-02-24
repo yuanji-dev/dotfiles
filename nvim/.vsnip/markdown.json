@@ -1,0 +1,16 @@
+{
+  "Hugo relref shortcode": {
+    "prefix": "h-relref",
+    "body": ["{{< relref \"${0}\" >}}"],
+    "description": "Add a relative permalink to document"
+  },
+  "Admonition": {
+    "prefix": "admonition",
+    "body": [
+      "!!! ${1|summary,info,tip,success,question,warning,failure,danger,bug,example,quote|} \"${2}\"",
+      "",
+      "    ${0}"
+    ],
+    "description": "Add admonition to document"
+  }
+}
