@@ -68,6 +68,7 @@ cmp.setup({
       menu = {
         buffer = "[Buffer]",
         nvim_lsp = "[LSP]",
+        dictionary = "[Dictionary]",
       },
     }),
   },
@@ -110,14 +111,18 @@ cmp.setup({
     ["<CR>"] = cmp.mapping.confirm({ select = true }),
   },
   sources = cmp.config.sources({
-    { name = "vsnip" }, -- For vsnip users.
     { name = "nvim_lsp" },
+    { name = "vsnip" }, -- For vsnip users.
     -- { name = 'luasnip' }, -- For luasnip users.
     -- { name = 'ultisnips' }, -- For ultisnips users.
     -- { name = 'snippy' }, -- For snippy users.
   }, {
-    { name = "buffer" },
     { name = "path" },
+    { name = "buffer" },
+    {
+      name = "dictionary",
+      keyword_length = 2,
+    },
   }),
 })
 
@@ -135,6 +140,12 @@ cmp.setup.cmdline(":", {
   }, {
     { name = "cmdline" },
   }),
+})
+
+require("cmp_dictionary").setup({
+  dic = {
+    ["*"] = { "/usr/share/dict/words" },
+  },
 })
 
 -- nvim-lsp-installer settings

@@ -12,5 +12,18 @@
       "    ${0}"
     ],
     "description": "Add admonition to document"
+  },
+  "Content tabs": {
+    "prefix": "contenttabs",
+    "body": [
+      "===! \"${1}\"",
+      "",
+      "    ${2}",
+      "",
+      "=== \"${3}\"",
+      "",
+      "    ${0}"
+    ],
+    "description": "Add content tabs to document"
   }
 }
