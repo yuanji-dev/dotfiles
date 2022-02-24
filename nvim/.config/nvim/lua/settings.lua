@@ -24,7 +24,8 @@ vim.o.colorcolumn = "100"
 vim.o.cursorline = true
 vim.o.cursorcolumn = true
 vim.o.autowrite = true
-vim.cmd([[autocmd BufWritePre *.go,*.md,*.lua,*.yml,*.yaml lua vim.lsp.buf.formatting_sync(nil, 1000)]])
+-- format on save
+vim.cmd([[autocmd BufWritePre *.go,*.md,*.lua,*.yml,*.yaml,*.json lua vim.lsp.buf.formatting_sync(nil, 1000)]])
 
 -- symbols_outline settings
 vim.g.symbols_outline = {
