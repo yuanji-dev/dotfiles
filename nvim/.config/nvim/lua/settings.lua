@@ -242,6 +242,7 @@ require("null-ls").setup({
     require("null-ls").builtins.diagnostics.textlint.with({
       prefer_local = "node_modules/.bin",
       filetypes = { "markdown" },
+      timeout = 10000,
     }),
   },
   on_attach = on_attach,
@@ -259,6 +260,8 @@ require("nvim-treesitter.configs").setup({
     "javascript",
     "json",
     "lua",
+    "make",
+    "markdown",
     "python",
     "ruby",
     "typescript",
