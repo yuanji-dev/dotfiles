@@ -250,11 +250,7 @@ require("null-ls").setup({
     require("null-ls").builtins.code_actions.shellcheck,
     require("null-ls").builtins.formatting.stylua,
     require("null-ls").builtins.diagnostics.hadolint,
-    require("null-ls").builtins.diagnostics.textlint.with({
-      prefer_local = "node_modules/.bin",
-      filetypes = { "markdown" },
-      timeout = 10000,
-    }),
+    require("null-ls").builtins.diagnostics.vale,
   },
   on_attach = on_attach,
 })
