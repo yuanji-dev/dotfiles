@@ -20,3 +20,5 @@ GAICA
 Cloudflare Pages
 Hugo
 MkDocs
+AUR
+chroot

@@ -25,5 +25,10 @@
       "    ${0}"
     ],
     "description": "Add content tabs to document"
+  },
+  "Prettier ignore": {
+    "prefix": "prettier-ignore",
+    "body": ["<!-- prettier-ignore -->", "${0}"],
+    "description": "Add prettier-ignore mark to document"
   }
 }
