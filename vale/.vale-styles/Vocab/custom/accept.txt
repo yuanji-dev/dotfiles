@@ -15,3 +15,8 @@ MIUI
 SSH
 LSP
 Neovim
+Shinsei
+GAICA
+Cloudflare Pages
+Hugo
+MkDocs
