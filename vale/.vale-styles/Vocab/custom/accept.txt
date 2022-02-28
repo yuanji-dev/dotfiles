@@ -22,3 +22,4 @@ Hugo
 MkDocs
 AUR
 chroot
+GitLab
