@@ -23,3 +23,6 @@ MkDocs
 AUR
 chroot
 GitLab
+Kustomize
+kubectl
+Kustomization

@@ -30,5 +30,10 @@
     "prefix": "prettier-ignore",
     "body": ["<!-- prettier-ignore -->", "${0}"],
     "description": "Add prettier-ignore mark to document"
+  },
+  "Cite source": {
+    "prefix": "cite",
+    "body": ["-- <cite>${0}</cite>"],
+    "description": "Add cited source to document"
   }
 }
