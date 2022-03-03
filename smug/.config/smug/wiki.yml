@@ -1,0 +1,18 @@
+session: wiki
+env:
+root: ~/Projects/wiki
+before_start:
+stop:
+windows:
+  - name: wiki
+    root:
+    BeforeStart:
+    panes:
+      - type: horizontal
+        root:
+        commands:
+          - source venv/bin/activate
+          - mkdocs serve
+    commands:
+    layout: main-horizontal
+    manual: false
