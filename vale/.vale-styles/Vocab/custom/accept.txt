@@ -27,3 +27,5 @@ Kustomize
 kubectl
 Kustomization
 tmux
+(z|Z)sh
+Node

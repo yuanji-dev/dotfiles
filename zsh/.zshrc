@@ -55,12 +55,14 @@ export TERM=xterm-256color
 export BROWSER=google-chrome-stable
 export GOPATH=$HOME/.go
 export PATH=$PATH:$HOME/.local/bin:$GOPATH/bin
+export FPATH="$HOME/.zsh_completions:$FPATH"
 export XDG_CONFIG_HOME=$HOME/.config
 
 alias ls='exa'
 alias ll='ls -alh'
 alias cat=bat
 alias sudo='sudo '
+alias vi='nvim'
 alias vim='nvim'
 alias v='f -e nvim'
 if ! command -v pbcopy &> /dev/null; then
@@ -87,12 +89,10 @@ eval `keychain --eval --agents gpg --quiet 3CB6EA7C55827AAD`
 
 eval "$(fasd --init auto)"
 
-export NVM_DIR="$HOME/.config/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"

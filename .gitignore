@@ -40,3 +40,5 @@ fonts/
 rime/.config/fcitx/rime/*
 !rime/.config/fcitx/rime/*.yaml
 nvim/.config/nvim/plugin
+zsh/.zsh_completions/*
+!zsh/.zsh_completions/.gitkeep
