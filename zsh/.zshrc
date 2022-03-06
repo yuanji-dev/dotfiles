@@ -27,6 +27,7 @@ zplug romkatv/powerlevel10k, as:theme, depth:1
 zplug zsh-users/zsh-autosuggestions
 zplug zsh-users/zsh-syntax-highlighting
 zplug zsh-users/zsh-history-substring-search
+zplug "junegunn/fzf", as:command, hook-build:"./install --all --no-update-rc"
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
@@ -98,13 +99,18 @@ tm() {
 
 eval "$(fasd --init auto)"
 
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
+if [[ ! -f "~/.zsh_completions/_volta" ]]; then
+  volta completions zsh > ~/.zsh_completions/_volta
+fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

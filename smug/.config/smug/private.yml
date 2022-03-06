@@ -1,11 +1,11 @@
-session: wiki
+session: private
 env:
-root: ~/Projects/wiki
+root: ~/
 before_start:
 stop:
 windows:
   - name: wiki
-    root:
+    root: Projects/wiki
     BeforeStart:
     panes:
       - type: horizontal
@@ -13,6 +13,16 @@ windows:
         commands:
           - source venv/bin/activate
           - mkdocs serve
+    commands:
+    layout: main-horizontal
+    manual: false
+  - name: dotfiles
+    root: Projects/dotfiles
+    BeforeStart:
+    panes:
+      - type: horizontal
+        root:
+        commands:
     commands:
     layout: main-horizontal
     manual: false

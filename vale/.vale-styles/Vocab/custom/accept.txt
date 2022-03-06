@@ -29,3 +29,4 @@ Kustomization
 tmux
 (z|Z)sh
 Node
+NGINX
