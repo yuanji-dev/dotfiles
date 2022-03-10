@@ -30,3 +30,5 @@ tmux
 (z|Z)sh
 Node
 NGINX
+CSS
+busybox
