@@ -1,9 +1,6 @@
-if [[ -z "${SSH_AUTH_SOCK}" ]] || [[ -z "${SSH_AGENT_PID}" ]]; then
-  eval `keychain --eval --agents ssh --quiet id_ed25519`
-fi
-if [[ -z "${GPG_AGENT_INFO}" ]]; then
-  eval `keychain --eval --agents gpg --quiet 3CB6EA7C55827AAD`
-fi
+eval `keychain --eval --agents ssh --quiet id_ed25519`
+eval `keychain --eval --agents gpg --quiet 3CB6EA7C55827AAD`
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -78,6 +75,7 @@ alias sudo='sudo '
 alias vi='nvim'
 alias vim='nvim'
 alias v='f -e nvim'
+alias cdtemp="cd $(mktemp -d)"
 if ! command -v pbcopy &> /dev/null; then
   alias pbcopy='wl-copy'
 fi
@@ -99,9 +97,11 @@ tm() {
 
 eval "$(fasd --init auto)"
 
+# fzf
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
@@ -111,6 +111,3 @@ fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
