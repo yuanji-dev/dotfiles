@@ -76,6 +76,7 @@ alias vi='nvim'
 alias vim='nvim'
 alias v='f -e nvim'
 alias cdtemp="cd $(mktemp -d)"
+alias pb="curl -F\"file=@-;\" https://envs.sh"
 if ! command -v pbcopy &> /dev/null; then
   alias pbcopy='wl-copy'
 fi

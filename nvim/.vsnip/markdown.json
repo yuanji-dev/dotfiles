@@ -4,6 +4,11 @@
     "body": ["{{< relref \"${0}\" >}}"],
     "description": "Add a relative permalink to document"
   },
+  "Hugo table shortcode": {
+    "prefix": "h-table",
+    "body": ["{{< table >}}", "${0}", "{{< /table >}}"],
+    "description": "Add table to hugo markdown"
+  },
   "Admonition": {
     "prefix": "admonition",
     "body": [

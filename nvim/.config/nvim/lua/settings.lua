@@ -252,6 +252,9 @@ require("null-ls").setup({
     require("null-ls").builtins.formatting.stylua,
     require("null-ls").builtins.diagnostics.hadolint,
     require("null-ls").builtins.diagnostics.vale,
+    require("null-ls").builtins.diagnostics.stylelint.with({
+      prefer_local = "node_modules/.bin",
+    }),
   },
   on_attach = on_attach,
 })
