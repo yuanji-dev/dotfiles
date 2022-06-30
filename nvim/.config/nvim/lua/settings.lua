@@ -1,46 +1,11 @@
 -- TODO
 -- * Popup border ( https://github.com/hrsh7th/nvim-cmp/pull/472 )
 
--- basic mappings
-vim.g.mapleader = " "
-vim.api.nvim_set_keymap("i", "jj", "<ESC>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<ESC><ESC>", ":nohlsearch<CR><Esc>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<Leader>t", ":SymbolsOutline<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<Leader>x", ":TroubleToggle<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<Leader>p", ":Telescope find_files<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<Leader>ff", ":Telescope find_files<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<Leader>fg", ":Telescope live_grep<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<Leader>fb", ":Telescope buffers<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<C-p>", "<Plug>MarkdownPreviewToggle", { noremap = false })
-
--- basic settings
-vim.o.ignorecase = true
-vim.o.number = true
-vim.o.expandtab = true
-vim.o.fileencodings = "ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1"
-vim.o.tabstop = 2
-vim.o.shiftwidth = 2
-vim.o.colorcolumn = "100"
-vim.o.cursorline = true
-vim.o.cursorcolumn = true
-vim.o.autowrite = true
-vim.o.guifont = "CaskaydiaCove Nerd Font Mono"
--- format on save
-vim.cmd([[autocmd BufWritePre *.go,*.md,*.lua,*.yml,*.yaml,*.json lua vim.lsp.buf.formatting_sync(nil, 1000)]])
-vim.cmd([[au BufNewFile,BufRead *.Jenkinsfile setf groovy]])
-
 -- symbols_outline settings
 vim.g.symbols_outline = {
   relative_width = true,
   width = 50,
 }
-
--- tokyonight settings
-vim.g.tokyonight_style = "storm"
-vim.g.tokyonight_italic_functions = true
-vim.g.tokyonight_sidebars = { "qf", "vista_kind", "terminal", "packer" }
-vim.g.tokyonight_colors = { hint = "orange", error = "#ff0000" }
-vim.cmd([[colorscheme tokyonight]])
 
 -- lualine settings
 require("lualine").setup({
