@@ -24,8 +24,10 @@ vim.o.colorcolumn = "100"
 vim.o.cursorline = true
 vim.o.cursorcolumn = true
 vim.o.autowrite = true
+vim.o.guifont = "CaskaydiaCove Nerd Font Mono"
 -- format on save
 vim.cmd([[autocmd BufWritePre *.go,*.md,*.lua,*.yml,*.yaml,*.json lua vim.lsp.buf.formatting_sync(nil, 1000)]])
+vim.cmd([[au BufNewFile,BufRead *.Jenkinsfile setf groovy]])
 
 -- symbols_outline settings
 vim.g.symbols_outline = {
@@ -158,6 +160,7 @@ local on_attach = function(_, bufnr)
   local function buf_set_keymap(...)
     vim.api.nvim_buf_set_keymap(bufnr, ...)
   end
+
   local function buf_set_option(...)
     vim.api.nvim_buf_set_option(bufnr, ...)
   end
@@ -189,59 +192,76 @@ local on_attach = function(_, bufnr)
 end
 
 local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
-local lsp_installer = require("nvim-lsp-installer")
-lsp_installer.on_server_ready(function(server)
-  local opts = {}
-  opts.on_attach = on_attach
-  opts.capabilities = capabilities
-  if server.name == "sumneko_lua" then
-    opts.settings = {
-      Lua = {
-        runtime = {
-          -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-          version = "LuaJIT",
-          -- Setup your lua path
-          path = runtime_path,
-        },
-        diagnostics = {
-          -- Get the language server to recognize the `vim` global
-          globals = { "vim", "runtime_path" },
-        },
-        workspace = {
-          -- Make the server aware of Neovim runtime files
-          library = vim.api.nvim_get_runtime_file("", true),
-        },
-        -- Do not send telemetry data containing a randomized but unique identifier
-        telemetry = {
-          enable = false,
+local util = require("lspconfig.util")
+util.default_config = vim.tbl_extend("force", util.default_config, {
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
+
+require("nvim-lsp-installer").setup({
+  automatic_installation = true,
+  ensure_installed = {
+    "eslint",
+    "gopls",
+    "pyright",
+    "tsserver",
+    "yamlls",
+  }
+})
+local lspconfig = require("lspconfig")
+lspconfig.sumneko_lua.setup({
+  settings = {
+    Lua = {
+      runtime = {
+        -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+        version = "LuaJIT",
+        -- Setup your lua path
+        path = runtime_path,
+      },
+      diagnostics = {
+        -- Get the language server to recognize the `vim` global
+        globals = { "vim", "runtime_path" },
+      },
+      workspace = {
+        -- Make the server aware of Neovim runtime files
+        library = vim.api.nvim_get_runtime_file("", true),
+      },
+      -- Do not send telemetry data containing a randomized but unique identifier
+      telemetry = {
+        enable = false,
+      },
+    },
+  },
+})
+
+lspconfig.gopls.setup({
+  init_options = {
+    usePlaceholders = true,
+  },
+})
+
+lspconfig.yamlls.setup({
+  settings = {
+    yaml = {
+      schemas = {
+        ["https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.19.1-standalone-strict/all.json"] = {
+          "**/*.k8s.yaml",
+          "**/*.k8s.yml",
         },
       },
-    }
-  end
-  if server.name == "gopls" then
-    -- opts.settings = {
-    --   golsp = {
-    --     useplaceholders = true,
-    --   },
-    -- }
-    opts.init_options = {
-      usePlaceholders = true,
-    }
-  end
-  if server.name == "yamlls" then
-    opts.settings = {
-      yaml = {
-        schemas = {
-          ["https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.19.1-standalone-strict/all.json"] = {
-            "**/*.k8s.yaml",
-            "**/*.k8s.yml",
-          },
-        },
+    },
+  },
+})
+
+lspconfig.pyright.setup({
+  settings = {
+    python = {
+      analysis = {
+        diagnosticMode = "openFilesOnly",
       },
-    }
-  end
-  server:setup(opts)
-end)
+    },
+  },
+})
 
 require("null-ls").setup({
   -- you must define at least one source for the plugin to work
@@ -251,12 +271,13 @@ require("null-ls").setup({
     }),
     require("null-ls").builtins.diagnostics.shellcheck,
     require("null-ls").builtins.code_actions.shellcheck,
-    require("null-ls").builtins.formatting.stylua,
+    require("null-ls").builtins.formatting.black,
     require("null-ls").builtins.diagnostics.hadolint,
     require("null-ls").builtins.diagnostics.vale,
     require("null-ls").builtins.diagnostics.stylelint.with({
       prefer_local = "node_modules/.bin",
     }),
+    require("null-ls").builtins.diagnostics.revive,
   },
   on_attach = on_attach,
 })
