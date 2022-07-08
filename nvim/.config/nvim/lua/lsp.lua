@@ -80,9 +80,37 @@ lspconfig.sumneko_lua.setup({
 })
 
 lspconfig.gopls.setup({
-  init_options = {
-    usePlaceholders = true,
-  },
+  settings = {
+    -- https://github.com/golang/tools/blob/master/gopls/doc/settings.md
+    gopls = {
+      usePlaceholders = true,
+      staticcheck = true,
+      gofumpt = true,
+      ['local'] = '',
+
+      analyses = {
+        unusedparams = true,
+        unreachable = true,
+        shadow = true,
+      },
+
+      codelenses = {
+        generate = true,
+        gc_details = true,
+      },
+
+      -- Not supported yet by NeoVim, https://github.com/neovim/neovim/issues/18086
+      hints = {
+        assignVariableTypes = true,
+        compositeLiteralFields = true,
+        compositeLiteralTypes = true,
+        constantValues = true,
+        functionTypeParameters = true,
+        parameterNames = true,
+        rangeVariableTypes = true,
+      },
+    }
+  }
 })
 
 lspconfig.yamlls.setup({
