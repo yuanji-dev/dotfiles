@@ -4,5 +4,10 @@
     "body": [
       "${VIM:system('python -c \"import uuid, sys;sys.stdout.write(str(uuid.uuid4()))\"')}"
     ]
+  },
+  "dateYMD": {
+    "prefix": "dateYMD",
+    "body": ["${CURRENT_YEAR}/${CURRENT_MONTH}/${CURRENT_DATE}"],
+    "description": "Put the date in (Y/m/D) format"
   }
 }
