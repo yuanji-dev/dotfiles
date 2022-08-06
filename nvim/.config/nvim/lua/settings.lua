@@ -1,6 +1,9 @@
 -- TODO
 -- * Popup border ( https://github.com/hrsh7th/nvim-cmp/pull/472 )
 
+-- colorizer settings
+require 'colorizer'.setup()
+
 -- symbols_outline settings
 vim.g.symbols_outline = {
   relative_width = true,

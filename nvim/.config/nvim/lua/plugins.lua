@@ -56,8 +56,12 @@ return require("packer").startup(function(use)
     run = ":TSUpdate",
   })
   use({ "iamcco/markdown-preview.nvim", run = "cd app && yarn install" })
-  use("ap/vim-css-color")
+  use("norcalli/nvim-colorizer.lua")
   use("brglng/vim-im-select")
+  use({
+    "windwp/nvim-autopairs",
+    config = function() require("nvim-autopairs").setup {} end
+  })
 
   if Packer_bootstrap then
     require("packer").sync()
