@@ -123,6 +123,7 @@ lspconfig.yamlls.setup({
           "**/*.k8s.yml",
         },
       },
+      customTags = { "!vault" },
     },
   },
 })
