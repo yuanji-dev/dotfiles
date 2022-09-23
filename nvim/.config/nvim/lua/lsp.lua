@@ -139,6 +139,7 @@ lspconfig.pyright.setup({
 })
 
 lspconfig.eslint.setup {}
+lspconfig.ansiblels.setup {}
 
 lspconfig.tsserver.setup({
   on_attach = function(client)

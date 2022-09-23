@@ -1,27 +1,25 @@
 session: private
-env:
 root: ~/
 before_start:
 stop:
 windows:
-  - name: wiki
-    root: Projects/wiki
+  - name: nikki
+    root: Projects/nikki
     BeforeStart:
     panes:
       - type: horizontal
-        root:
+        root: .
         commands:
-          - source venv/bin/activate
-          - mkdocs serve
+          - hugo server
     commands:
     layout: main-horizontal
     manual: false
-  - name: dotfiles
-    root: Projects/dotfiles
+  - name: logseq
+    root: Projects/logseq
     BeforeStart:
     panes:
       - type: horizontal
-        root:
+        root: .
         commands:
     commands:
     layout: main-horizontal
