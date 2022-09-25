@@ -16,5 +16,6 @@ vim.filetype.add({
     -- ['inventory/.*%.ini'] = 'ansible_hosts',
     [".*/group_vars/.*%.ya?ml"] = "yaml.ansible",
     [".*/host_vars/.*%.ya?ml"] = "yaml.ansible",
+    [".*%.play%.ya?ml"] = "yaml.ansible",
   },
 })

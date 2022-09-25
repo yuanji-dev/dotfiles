@@ -44,12 +44,21 @@ util.default_config = vim.tbl_extend("force", util.default_config, {
   on_attach = on_attach,
 })
 
-require("nvim-lsp-installer").setup({
+require("mason").setup({
+  ui = {
+    icons = {
+      package_installed = "✓"
+    }
+  }
+})
+require("mason-lspconfig").setup({
   automatic_installation = true,
   ensure_installed = {
+    "ansiblels",
     "eslint",
     "gopls",
     "pyright",
+    "sumneko_lua",
     "tsserver",
     "yamlls",
   }
