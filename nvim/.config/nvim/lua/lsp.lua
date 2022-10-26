@@ -37,7 +37,7 @@ local on_attach = function(_, bufnr)
   buf_set_keymap("n", "<space>bf", "<cmd>lua vim.lsp.buf.format{async = true}<CR>", opts)
 end
 
-local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local util = require("lspconfig.util")
 util.default_config = vim.tbl_extend("force", util.default_config, {
   capabilities = capabilities,
@@ -149,6 +149,7 @@ lspconfig.pyright.setup({
 
 lspconfig.eslint.setup {}
 lspconfig.ansiblels.setup {}
+-- lspconfig.groovyls.setup {}
 
 lspconfig.tsserver.setup({
   on_attach = function(client)

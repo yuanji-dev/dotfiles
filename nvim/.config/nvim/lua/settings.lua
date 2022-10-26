@@ -5,10 +5,7 @@
 require 'colorizer'.setup()
 
 -- symbols_outline settings
-vim.g.symbols_outline = {
-  relative_width = true,
-  width = 50,
-}
+require("symbols-outline").setup()
 
 -- lualine settings
 require("lualine").setup({
