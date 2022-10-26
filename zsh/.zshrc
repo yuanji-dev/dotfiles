@@ -1,4 +1,3 @@
-eval `keychain --eval --agents ssh --quiet id_ed25519`
 eval `keychain --eval --agents gpg --quiet 3CB6EA7C55827AAD`
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
