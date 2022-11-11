@@ -9,12 +9,23 @@
     "body": ["{{< ruby \"${1}\" \"${0}\" >}}"],
     "description": "Add a ruby html tag to document"
   },
-  "Admonition": {
-    "prefix": "admonition",
+  "MkDocsAdmonition": {
+    "prefix": "mkdocs-admonition",
     "body": [
       "!!! ${1|summary,info,tip,success,question,warning,failure,danger,bug,example,quote|} \"${2}\"",
       "",
       "    ${0}"
+    ],
+    "description": "Add admonition to document"
+  },
+  "Admonition": {
+    "prefix": "admonition",
+    "body": [
+      ":::${1|note,tip,info,caution,danger|} ${2}",
+      "",
+      "${0}",
+      "",
+      ":::"
     ],
     "description": "Add admonition to document"
   },
