@@ -11,6 +11,6 @@ vim.o.cursorcolumn = true
 vim.o.autowrite = true
 vim.o.guifont = "CaskaydiaCove Nerd Font Mono"
 -- format on save
-vim.cmd([[autocmd BufWritePre *.go,*.md,*.lua,*.yml,*.yaml,*.json lua vim.lsp.buf.formatting_sync(nil, 1000)]])
-vim.cmd([[autocmd BufWritePre *.tsx,*.ts,*.jsx,*.js EslintFixAll]])
+vim.cmd([[autocmd BufWritePre *.go,*.md,*.lua,*.yml,*.yaml,*.json lua vim.lsp.buf.format()]])
+vim.cmd([[autocmd BufWritePre *.tsx,*.ts,*.jsx,*.js lua vim.lsp.buf.format()]])
 vim.cmd([[au BufNewFile,BufRead *.Jenkinsfile setf groovy]])

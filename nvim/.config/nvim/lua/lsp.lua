@@ -153,7 +153,7 @@ lspconfig.ansiblels.setup {}
 
 lspconfig.tsserver.setup({
   on_attach = function(client)
-    client.resolved_capabilities.document_formatting = false
+    client.server_capabilities.documentFormattingProvider = false
   end
 })
 
