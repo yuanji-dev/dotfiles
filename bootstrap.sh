@@ -12,6 +12,7 @@ items=(
     "nvim"
     "vale"
     "smug"
+    "kitty"
 )
 
 for item in "${items[@]}" ; do
