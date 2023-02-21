@@ -63,6 +63,7 @@ return require("packer").startup(function(use)
     "windwp/nvim-autopairs",
     config = function() require("nvim-autopairs").setup {} end
   })
+  use("fladson/vim-kitty")
 
   if Packer_bootstrap then
     require("packer").sync()

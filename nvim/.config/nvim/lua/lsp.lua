@@ -58,13 +58,13 @@ require("mason-lspconfig").setup({
     "eslint",
     "gopls",
     "pyright",
-    "sumneko_lua",
+    "lua_ls",
     "tsserver",
     "yamlls",
   }
 })
 local lspconfig = require("lspconfig")
-lspconfig.sumneko_lua.setup({
+lspconfig.lua_ls.setup({
   settings = {
     Lua = {
       runtime = {
