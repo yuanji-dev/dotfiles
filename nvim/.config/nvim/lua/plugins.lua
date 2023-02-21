@@ -18,7 +18,7 @@ return require("packer").startup(function(use)
   use("folke/tokyonight.nvim")
   use({
     "nvim-lualine/lualine.nvim",
-    requires = { "kyazdani42/nvim-web-devicons", opt = true },
+    requires = { "nvim-tree/nvim-web-devicons", opt = true },
   })
   use("neovim/nvim-lspconfig")
   use("williamboman/mason.nvim")
@@ -37,7 +37,7 @@ return require("packer").startup(function(use)
   use("simrat39/symbols-outline.nvim")
   use({
     "folke/trouble.nvim",
-    requires = "kyazdani42/nvim-web-devicons",
+    requires = "nvim-tree/nvim-web-devicons",
     config = function()
       require("trouble").setup({
         -- your configuration comes here
