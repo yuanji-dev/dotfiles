@@ -9,6 +9,11 @@
     "body": ["{{< ruby \"${1}\" \"${0}\" >}}"],
     "description": "Add a ruby html tag to document"
   },
+  "Hugo details shortcode": {
+    "prefix": "h-details",
+    "body": ["{{% details \"${0}\" %}}\n{{% /details %}}"],
+    "description": "Add details"
+  },
   "MkDocsAdmonition": {
     "prefix": "mkdocs-admonition",
     "body": [

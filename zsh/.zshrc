@@ -1,5 +1,3 @@
-eval `keychain --eval --agents gpg --quiet 3CB6EA7C55827AAD`
-
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -77,6 +75,7 @@ alias v='f -e nvim'
 alias cdtemp="cd $(mktemp -d)"
 alias pb="curl -F\"file=@-;\" https://envs.sh"
 alias email='aerc'
+alias qr='qrencode -m 2 -t utf8 <<< "$1"'
 if ! command -v pbcopy &> /dev/null; then
   alias pbcopy='wl-copy'
 fi
