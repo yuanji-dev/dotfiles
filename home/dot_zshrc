@@ -78,6 +78,7 @@ alias pb="curl -F\"file=@-;\" https://envs.sh"
 alias email='aerc'
 alias dotfiles='chezmoi'
 alias qr='qrencode -m 2 -t utf8 <<< "$1"'
+alias bw-unlock='export BW_SESSION=$(bw unlock | grep export | cut -d'\''"'\'' -f2)'
 if ! command -v pbcopy &> /dev/null; then
   alias pbcopy='wl-copy'
 fi

@@ -1,0 +1,9 @@
+{{ if not .hasBitwarden }}
+.ssh/id_ed25519*
+{{ end }}
+
+{{ if ne .chezmoi.os "linux" }}
+.config/pacman/**
+.config/environment.d/**
+.config/chrome-flags.conf
+{{ end }}

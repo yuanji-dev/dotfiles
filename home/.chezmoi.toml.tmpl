@@ -1,12 +1,14 @@
 {{- $email := "self@gimo.me" -}}
 {{- $name := "Yuanji" -}}
 {{- $gpgsign := true -}}
+{{- $hasBitwarden := true -}}
 {{- $pinentryCmd := "pinentry" -}}
 
 {{- if stdinIsATTY -}}
 {{- $email = promptString "email" $email -}}
 {{- $name = promptString "name" $name -}}
 {{- $gpgsign = promptBool "gpgsign" $gpgsign -}}
+{{- $hasBitwarden = promptBool "hasBitwarden" $hasBitwarden -}}
 {{- end -}}
 
 {{- if eq .chezmoi.os "darwin" -}}
@@ -22,4 +24,8 @@
   email = {{ $email | quote }}
   name = {{ $name | quote }}
   gpgsign = {{ $gpgsign }}
+  hasBitwarden = {{ $hasBitwarden }}
   pinentryCmd = {{ $pinentryCmd | quote }}
+
+[data.bitwarden]
+  ssh_key = "7107abed-02b2-4a40-bb38-4b1cd44cbd12"
