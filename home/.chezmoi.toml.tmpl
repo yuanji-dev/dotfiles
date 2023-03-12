@@ -1,6 +1,13 @@
 {{- $email := "self@gimo.me" -}}
 {{- $name := "Yuanji" -}}
+{{- $gpgsign := true -}}
 {{- $pinentryCmd := "pinentry" -}}
+
+{{- if stdinIsATTY -}}
+{{- $email = promptString "email" $email -}}
+{{- $name = promptString "name" $name -}}
+{{- $gpgsign = promptBool "gpgsign" $gpgsign -}}
+{{- end -}}
 
 {{- if eq .chezmoi.os "darwin" -}}
 {{- $pinentryCmd = "/opt/homebrew/bin/pinentry-mac" -}}
@@ -14,4 +21,5 @@
 [data]
   email = {{ $email | quote }}
   name = {{ $name | quote }}
+  gpgsign = {{ $gpgsign }}
   pinentryCmd = {{ $pinentryCmd | quote }}
