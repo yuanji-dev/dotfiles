@@ -1,0 +1,17 @@
+{{- $email := "self@gimo.me" -}}
+{{- $name := "Yuanji" -}}
+{{- $pinentryCmd := "pinentry" -}}
+
+{{- if eq .chezmoi.os "darwin" -}}
+{{- $pinentryCmd = "/opt/homebrew/bin/pinentry-mac" -}}
+{{- else if eq .chezmoi.os "linux" -}}
+{{- $pinentryCmd = "/usr/bin/pinentry-gnome3" -}}
+{{- end -}}
+
+[pinentry]
+  command = {{ $pinentryCmd | quote }}
+
+[data]
+  email = {{ $email | quote }}
+  name = {{ $name | quote }}
+  pinentryCmd = {{ $pinentryCmd | quote }}

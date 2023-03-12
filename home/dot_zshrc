@@ -75,6 +75,7 @@ alias v='f -e nvim'
 alias cdtemp="cd $(mktemp -d)"
 alias pb="curl -F\"file=@-;\" https://envs.sh"
 alias email='aerc'
+alias dotfiles='chezmoi'
 alias qr='qrencode -m 2 -t utf8 <<< "$1"'
 if ! command -v pbcopy &> /dev/null; then
   alias pbcopy='wl-copy'
