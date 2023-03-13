@@ -6,34 +6,10 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 #####################################################################
-# zplug
+# sheldon
 #####################################################################
 
-# Check if zplug is installed
-if [[ ! -d ~/.zplug ]]; then
-    git clone https://github.com/zplug/zplug ~/.zplug
-    source ~/.zplug/init.zsh && zplug update --self
-fi
-
-source ~/.zplug/init.zsh
-
-zplug zplug/zplug, hook-build:"zplug --self-manage"
-zplug romkatv/powerlevel10k, as:theme, depth:1
-zplug zsh-users/zsh-autosuggestions
-zplug zsh-users/zsh-syntax-highlighting
-zplug zsh-users/zsh-history-substring-search
-zplug "junegunn/fzf", as:command, hook-build:"./install --all --no-update-rc"
-
-# Install plugins if there are plugins that have not been installed
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
-fi
-
-# Then, source plugins and add commands to $PATH
-zplug load
+eval "$(sheldon source)"
 
 #####################################################################
 # zsh
