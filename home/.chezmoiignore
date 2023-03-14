@@ -3,6 +3,7 @@
 {{ end }}
 
 {{ if ne .chezmoi.os "linux" }}
+.chezmoiscripts/linux/**
 .config/pacman/**
 .config/environment.d/**
 .config/chrome-flags.conf
