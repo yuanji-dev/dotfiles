@@ -172,6 +172,7 @@ require("null-ls").setup({
       prefer_local = "node_modules/.bin",
     }),
     require("null-ls").builtins.diagnostics.revive,
+    require("null-ls").builtins.diagnostics.pylint,
   },
   on_attach = on_attach,
 })
