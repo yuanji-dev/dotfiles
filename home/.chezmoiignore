@@ -7,4 +7,6 @@
 .config/pacman/**
 .config/environment.d/**
 .config/chrome-flags.conf
+.config/mpd/**
+.config/immersionpod/**
 {{ end }}
