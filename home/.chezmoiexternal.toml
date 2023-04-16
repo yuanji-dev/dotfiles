@@ -2,3 +2,8 @@
     type = "git-repo"
     url = "https://github.com/asdf-vm/asdf.git"
     refreshPeriod = "168h"
+
+[".config/mpv/scripts/subs2srs"]
+    type = "git-repo"
+    url = "https://github.com/Ajatt-Tools/mpvacious.git"
+    refreshPeriod = "168h"
