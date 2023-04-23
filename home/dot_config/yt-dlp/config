@@ -1,4 +1,4 @@
---sub-lang 'en.*,ja,.*cn'
+--sub-lang 'en.*,ja.*,zh.*'
 --embed-subs
 --embed-metadata
 --format 'bestvideo[height<=1080]+bestaudio,best'
