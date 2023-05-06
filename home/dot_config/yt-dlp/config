@@ -3,5 +3,5 @@
 --embed-metadata
 --format 'bestvideo[height<=1080]+bestaudio,best'
 --merge-output-format mp4
---output '~/Videos/yt-dlp/%(uploader)s/%(upload_date)s - %(title)s.%(ext)s'
+--output '~/Videos/yt-dlp/%(upload_date)s - %(title)s.%(ext)s'
 --user-agent "Mozilla/5.0 (Windows NT 10.0; rv:94.0) Gecko/20100101 Firefox/94.0"
