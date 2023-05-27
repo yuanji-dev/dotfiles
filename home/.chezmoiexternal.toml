@@ -7,3 +7,8 @@
     type = "git-repo"
     url = "https://github.com/Ajatt-Tools/mpvacious.git"
     refreshPeriod = "168h"
+
+[".config/mpv/scripts/videoclip"]
+    type = "git-repo"
+    url = "https://github.com/Ajatt-Tools/videoclip.git"
+    refreshPeriod = "168h"
