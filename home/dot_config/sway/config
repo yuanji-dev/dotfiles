@@ -236,7 +236,8 @@ gaps inner 10
 default_border pixel 3
 default_floating_border normal
 for_window [app_id="anki"] floating enable; border normal
-for_window [urgent=latest] focus
+#for_window [urgent=latest] focus
+focus_on_window_activation focus
 
 set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
 bindsym $mod+0 mode "$mode_system"
