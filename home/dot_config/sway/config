@@ -232,7 +232,7 @@ bar {
 
 font pango:Cantarell 14
 exec_always fcitx5 -d --replace
-gaps inner 10
+gaps inner 5
 default_border pixel 3
 default_floating_border normal
 for_window [app_id="anki"] floating enable; border normal
