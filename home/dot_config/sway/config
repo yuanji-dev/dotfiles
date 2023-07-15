@@ -73,6 +73,10 @@ input type:touchpad {
   tap enabled
 }
 
+input type:pointer {
+  natural_scroll enabled
+}
+
 ### Key bindings
 #
 # Basics:
