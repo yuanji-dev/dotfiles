@@ -1,0 +1,10 @@
+{{ if eq .chezmoi.osRelease.id "arch" -}}
+
+#!/usr/bin/env bash
+
+sudo systemctl enable --now syncthing@yuanji
+sudo systemctl enable --now avahi-daemon
+
+systemctl --user enable gcr-ssh-agent.socket
+
+{{ end -}}
