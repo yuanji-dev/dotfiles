@@ -234,7 +234,7 @@ bar {
     swaybar_command waybar
 }
 
-font pango:Cantarell 14
+font pango:Cantarell 12
 exec_always fcitx5 -d --replace
 gaps inner 5
 default_border pixel 3
