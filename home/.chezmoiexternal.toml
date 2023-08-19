@@ -12,3 +12,7 @@
     type = "git-repo"
     url = "https://github.com/Ajatt-Tools/videoclip.git"
     refreshPeriod = "168h"
+    
+[".config/nvim"]
+    type = "git-repo"
+    url = "https://github.com/AstroNvim/AstroNvim"
