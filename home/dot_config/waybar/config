@@ -3,34 +3,21 @@
     "position": "top",
     "height": 30,
     "spacing": 4,
-    "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad"],
-    "modules-center": ["sway/window"],
+    "modules-left": ["wlr/workspaces", "hyprland/submap"],
+    "modules-center": ["hyprland/window"],
     "modules-right": ["idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "battery", "clock", "tray"],
-    "sway/workspaces": {
-        "disable-scroll": true,
-        "all-outputs": true,
-        "warp-on-scroll": false,
-        "format": "{name}: {icon}",
-        "format-icons": {
-            "1": "",
-            "2": "",
-            "3": "",
-            "4": "",
-            "5": "",
-            "urgent": "",
-            "focused": "",
-            "default": ""
-        }
-    },
-    "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>"
-    },
-    "sway/scratchpad": {
-        "format": "{icon} {count}",
-        "show-empty": false,
-        "format-icons": ["", ""],
-        "tooltip": true,
-        "tooltip-format": "{app}: {title}"
+    "wlr/workspaces": {
+	    "format": "{name}: {icon}",
+	    "format-icons": {
+	    	"1": "",
+	    	"2": "",
+	    	"3": "",
+	    	"4": "",
+	    	"5": "",
+	    	"active": "",
+	    	"default": ""
+	    },
+	    "on-click": "activate"
     },
     "idle_inhibitor": {
         "format": "{icon}",
