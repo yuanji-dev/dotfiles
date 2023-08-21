@@ -31,7 +31,9 @@ return {
         "hadolint",
         "vale",
         "stylelint",
-        "pylint",
+        -- use project-local pylint, do not install via mason. see
+        -- https://github.com/williamboman/mason.nvim/issues/1336#issuecomment-1614274888
+        -- "pylint",
       })
     end,
   },
