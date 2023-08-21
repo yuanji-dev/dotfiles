@@ -9,7 +9,7 @@ return {
     -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
     config.sources = {
       -- Set a formatter
-      require("null-ls").builtins.formatting.prettier.with {
+      null_ls.builtins.formatting.prettier.with {
         prefer_local = "node_modules/.bin",
       },
       null_ls.builtins.diagnostics.shellcheck,
@@ -22,6 +22,7 @@ return {
       },
       null_ls.builtins.diagnostics.pylint,
     }
+    config.default_timeout = 10000 -- 10s to wait pylint
     return config -- return final config table
   end,
 }
