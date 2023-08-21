@@ -1,5 +1,6 @@
 {{ if not .hasBitwarden }}
 .ssh/id_ed25519*
+.local/share/atuin/key
 {{ end }}
 
 {{ if ne .chezmoi.os "linux" }}
