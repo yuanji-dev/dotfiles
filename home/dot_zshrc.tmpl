@@ -93,10 +93,10 @@ source "$HOME/.asdf/asdf.sh"
 fpath=(${ASDF_DIR}/completions $fpath)
 autoload -Uz compinit && compinit
 
-{{- if .hasBitwarden -}}
+{{ if .hasBitwarden -}}
 # atuin
 eval "$(atuin init zsh)"
-{{- end -}}
+{{- end }}
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
