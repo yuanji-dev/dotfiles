@@ -15,6 +15,7 @@ return {
       null_ls.builtins.diagnostics.shellcheck,
       null_ls.builtins.code_actions.shellcheck,
       null_ls.builtins.formatting.black,
+      null_ls.builtins.formatting.shfmt,
       null_ls.builtins.diagnostics.hadolint,
       null_ls.builtins.diagnostics.vale,
       null_ls.builtins.diagnostics.stylelint.with {

@@ -27,6 +27,7 @@ return {
         "prettier",
         "stylua",
         "shellcheck",
+        "shfmt",
         "black",
         "hadolint",
         "vale",
