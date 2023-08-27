@@ -69,7 +69,7 @@
     },
     "network": {
         "interval": 2,
-        "format-wifi": "{icon} {bandwidthUpBytes}  {bandwidthDownBytes} ",
+        "format-wifi": " {bandwidthUpBytes}  {bandwidthDownBytes}",
         "format-ethernet": "{icon} {ipaddr}/{cidr}",
         "tooltip-format": "{icon} {essid} ({signalStrength}%) {ifname}: {ipaddr}/{cidr} via {gwaddr}",
         "format-linked": "{icon} {ifname} (No IP)",
