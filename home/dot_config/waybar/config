@@ -3,7 +3,7 @@
     "position": "top",
     "height": 30,
     "spacing": 4,
-    "modules-left": ["wlr/workspaces", "hyprland/submap"],
+    "modules-left": ["hyprland/workspaces", "hyprland/submap"],
     "modules-center": ["hyprland/window"],
     "modules-right": ["idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "battery", "clock", "tray"],
     "wlr/workspaces": {
