@@ -1,5 +1,5 @@
 {{ if eq .chezmoi.osRelease.id "arch" -}}
-
+{{ if not .isWSL }}
 #!/usr/bin/env bash
 
 sudo systemctl enable --now syncthing@yuanji
@@ -8,5 +8,5 @@ sudo systemctl enable --now bluetooth
 sudo usermod -a -G video $USER
 
 systemctl --user enable gcr-ssh-agent.socket
-
+{{ end }}
 {{ end -}}

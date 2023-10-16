@@ -40,6 +40,10 @@ export GOPATH=$HOME/.go
 export PATH=$PATH:$HOME/.local/bin:$GOPATH/bin
 export FPATH="$HOME/.zsh_completions:$FPATH"
 export XDG_CONFIG_HOME=$HOME/.config
+{{ if .isWSL -}}
+# see: https://github.com/keybase/keybase-issues/issues/2798
+export GPG_TTY=$TTY
+{{- end }}
 
 alias ls='exa'
 alias ll='ls -alh'

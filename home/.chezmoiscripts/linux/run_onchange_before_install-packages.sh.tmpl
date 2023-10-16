@@ -97,6 +97,51 @@
      "zsh"
      "zsh-completions" -}}
 
+{{ if .isWSL -}}
+{{ $packages = list
+     "ansible"
+     "ansible-lint"
+     "atuin"
+     "bat"
+     "bitwarden-cli"
+     "chezmoi"
+     "croc"
+     "docker"
+     "docker-compose"
+     "eza"
+     "fasd"
+     "fd"
+     "fzf"
+     "git"
+     "git-delta"
+     "go"
+     "hadolint-bin"
+     "htop"
+     "hugo"
+     "ipython"
+     "jq"
+     "ncdu"
+     "neofetch"
+     "neovim"
+     "rclone"
+     "ripgrep"
+     "sheldon"
+     "shellcheck-static"
+     "s-tui"
+     "stylua"
+     "tealdeer"
+     "tig"
+     "tmux"
+     "tree"
+     "unzip"
+     "vale-git"
+     "wget"
+     "whois"
+     "words"
+     "yt-dlp"
+     "zsh"
+     "zsh-completions" -}}
+{{ end -}}
 #!/usr/bin/env bash
 
 set -eufo pipefail

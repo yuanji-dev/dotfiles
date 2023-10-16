@@ -2,6 +2,7 @@
 {{- $name := "Yuanji" -}}
 {{- $gpgsign := true -}}
 {{- $hasBitwarden := true -}}
+{{- $isWSL := false -}}
 {{- $pinentryCmd := "pinentry" -}}
 
 {{- if stdinIsATTY -}}
@@ -17,6 +18,11 @@
 {{- $pinentryCmd = "/usr/bin/pinentry-gnome3" -}}
 {{- end -}}
 
+{{- if (.chezmoi.kernel.osrelease | lower | contains "microsoft") -}}
+{{- $pinentryCmd = "/usr/bin/pinentry" -}}
+{{- $isWSL = true -}}
+{{- end -}}
+
 [pinentry]
   command = {{ $pinentryCmd | quote }}
 
@@ -26,6 +32,7 @@
   gpgsign = {{ $gpgsign }}
   hasBitwarden = {{ $hasBitwarden }}
   pinentryCmd = {{ $pinentryCmd | quote }}
+  isWSL = {{ $isWSL }}
 
 [data.bitwarden]
   ssh_key = "7107abed-02b2-4a40-bb38-4b1cd44cbd12"
