@@ -10,6 +10,7 @@
 [interactive]
     diffFilter = delta --color-only
 
+{{ if not .isWSL -}}
 [delta]
     navigate = true
     minus-style                   = syntax "#3f2d3d"
@@ -23,6 +24,7 @@
     plus-empty-line-marker-style  = syntax "#283b4d"
     line-numbers-plus-style       = "#399a96"
     line-numbers-zero-style       = "#3b4261"
+{{- end -}}
 
 [merge]
     conflictstyle = diff3

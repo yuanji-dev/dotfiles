@@ -43,6 +43,7 @@ export XDG_CONFIG_HOME=$HOME/.config
 {{ if .isWSL -}}
 # see: https://github.com/keybase/keybase-issues/issues/2798
 export GPG_TTY=$TTY
+export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
 {{- end }}
 
 alias ls='exa'
