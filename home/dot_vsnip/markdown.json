@@ -14,6 +14,11 @@
     "body": ["{{% details \"${0}\" %}}\n{{% /details %}}"],
     "description": "Add details"
   },
+  "Hugo audio shortcode": {
+    "prefix": "h-audio",
+    "body": ["{{< audio src=\"${1}\" caption=\"${0}\" >}}"],
+    "description": "Add audio html to document"
+  },
   "MkDocsAdmonition": {
     "prefix": "mkdocs-admonition",
     "body": [
