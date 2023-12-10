@@ -19,6 +19,11 @@
     "body": ["{{< audio src=\"${1}\" caption=\"${0}\" >}}"],
     "description": "Add audio html to document"
   },
+  "Hugo video shortcode": {
+    "prefix": "h-video",
+    "body": ["{{< video src=\"${1}\" caption=\"${0}\" >}}"],
+    "description": "Add video html to document"
+  },
   "MkDocsAdmonition": {
     "prefix": "mkdocs-admonition",
     "body": [
