@@ -18,13 +18,13 @@
 {{- else if eq .chezmoi.os "linux" -}}
 {{- $pinentryCmd = "/usr/bin/pinentry-gnome3" -}}
 {{- $clipCmd = "wl-copy" -}}
-{{- end -}}
-
 {{- if (.chezmoi.kernel.osrelease | lower | contains "microsoft") -}}
 {{- $pinentryCmd = "/usr/bin/pinentry" -}}
 {{- $clipCmd = "clip.exe" -}}
 {{- $isWSL = true -}}
 {{- end -}}
+{{- end -}}
+
 
 [pinentry]
   command = {{ $pinentryCmd | quote }}
