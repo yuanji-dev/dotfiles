@@ -7,5 +7,12 @@
     "prefix": "dateYMD",
     "body": ["${CURRENT_YEAR}/${CURRENT_MONTH}/${CURRENT_DATE}"],
     "description": "Put the date in (Y/m/D) format"
+  },
+  "iso8601": {
+    "prefix": "iso8601",
+    "body": [
+      "${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}T${CURRENT_HOUR}:${CURRENT_MINUTE}:${CURRENT_SECOND}${CURRENT_TIMEZONE_OFFSET}"
+    ],
+    "description": "Put the datetime in iso8601 format"
   }
 }
