@@ -14,5 +14,9 @@
       "${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}T${CURRENT_HOUR}:${CURRENT_MINUTE}:${CURRENT_SECOND}${CURRENT_TIMEZONE_OFFSET}"
     ],
     "description": "Put the datetime in iso8601 format"
+  },
+  "Hugo data inspection": {
+    "prefix": "h-inspect",
+    "body": ["<pre>{{ jsonify (dict \"indent\" \"  \") .${0} }}</pre>"]
   }
 }
