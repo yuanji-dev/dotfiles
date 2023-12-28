@@ -4,6 +4,11 @@
     "body": ["{{< relref \"${0}\" >}}"],
     "description": "Add a relative permalink to document"
   },
+  "Hugo relanchor shortcode": {
+    "prefix": "h-relanchor",
+    "body": ["{{< relanchor \"${0}\" >}}"],
+    "description": "Add a relative anchor to document"
+  },
   "Hugo ruby shortcode": {
     "prefix": "h-ruby",
     "body": ["{{< ruby \"${1}\" \"${0}\" >}}"],
