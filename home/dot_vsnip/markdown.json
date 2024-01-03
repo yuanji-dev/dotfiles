@@ -9,6 +9,13 @@
     "body": ["{{< relanchor \"${0}\" >}}"],
     "description": "Add a relative anchor to document"
   },
+  "Hugo json2table shortcode": {
+    "prefix": "h-json2table",
+    "body": [
+      "{{< json2table file=\"${1}\" headers=\"${2}\" columns=\"${3}\" pageLink=\"${0}\" >}}"
+    ],
+    "description": "Convert JSON to Table"
+  },
   "Hugo ruby shortcode": {
     "prefix": "h-ruby",
     "body": ["{{< ruby \"${1}\" \"${0}\" >}}"],
