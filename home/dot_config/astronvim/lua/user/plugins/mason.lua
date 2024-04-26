@@ -14,6 +14,7 @@ return {
         "lua_ls",
         "tsserver",
         "yamlls",
+        "solargraph",
       })
     end,
   },
