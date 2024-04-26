@@ -1,4 +1,6 @@
--- customize mason plugins
+-- Customize Mason plugins
+
+---@type LazySpec
 return {
   -- use mason-lspconfig to configure LSP installations
   {
@@ -6,7 +8,7 @@ return {
     -- overrides `require("mason-lspconfig").setup(...)`
     opts = function(_, opts)
       -- add more things to the ensure_installed table protecting against community packs modifying it
-      opts.ensure_installed = require("astronvim.utils").list_insert_unique(opts.ensure_installed, {
+      opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, {
         "ansiblels",
         "eslint",
         "gopls",
@@ -15,6 +17,7 @@ return {
         "tsserver",
         "yamlls",
         "solargraph",
+        -- add more arguments for adding more language servers
       })
     end,
   },
@@ -24,7 +27,7 @@ return {
     -- overrides `require("mason-null-ls").setup(...)`
     opts = function(_, opts)
       -- add more things to the ensure_installed table protecting against community packs modifying it
-      opts.ensure_installed = require("astronvim.utils").list_insert_unique(opts.ensure_installed, {
+      opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, {
         "prettier",
         "stylua",
         "shellcheck",
@@ -36,6 +39,7 @@ return {
         -- use project-local pylint, do not install via mason. see
         -- https://github.com/williamboman/mason.nvim/issues/1336#issuecomment-1614274888
         -- "pylint",
+        -- add more arguments for adding more null-ls sources
       })
     end,
   },
@@ -44,8 +48,9 @@ return {
     -- overrides `require("mason-nvim-dap").setup(...)`
     opts = function(_, opts)
       -- add more things to the ensure_installed table protecting against community packs modifying it
-      opts.ensure_installed = require("astronvim.utils").list_insert_unique(opts.ensure_installed, {
+      opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, {
         -- "python",
+        -- add more arguments for adding more debuggers
       })
     end,
   },
