@@ -17,6 +17,7 @@ return {
         "tsserver",
         "yamlls",
         "solargraph",
+        "bashls",
         -- add more arguments for adding more language servers
       })
     end,
