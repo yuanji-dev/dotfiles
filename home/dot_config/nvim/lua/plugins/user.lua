@@ -12,11 +12,11 @@ return {
     event = "BufRead",
     config = function() require("lsp_signature").setup() end,
   },
-  -- {
-  --   "keaising/im-select.nvim",
-  --   lazy = false,
-  --   config = function() require("im_select").setup() end,
-  -- },
+  {
+    "keaising/im-select.nvim",
+    lazy = false,
+    config = function() require("im_select").setup() end,
+  },
 
   -- == Examples of Overriding Plugins ==
 
