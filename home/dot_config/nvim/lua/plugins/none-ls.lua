@@ -5,23 +5,22 @@ return {
   "nvimtools/none-ls.nvim",
   opts = function(_, config)
     -- config variable is the default configuration table for the setup function call
-    local null_ls = require "null-ls"
+    local null_ls = require("null-ls")
 
     -- Check supported formatters and linters
     -- https://github.com/nvimtools/none-ls.nvim/tree/main/lua/null-ls/builtins/formatting
     -- https://github.com/nvimtools/none-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
     config.sources = {
       -- Set a formatter
-      null_ls.builtins.formatting.prettier.with {
+      null_ls.builtins.formatting.prettier.with({
         prefer_local = "node_modules/.bin",
-      },
-      null_ls.builtins.formatting.black,
+      }),
       null_ls.builtins.formatting.shfmt,
       null_ls.builtins.diagnostics.hadolint,
       null_ls.builtins.diagnostics.vale,
-      null_ls.builtins.diagnostics.stylelint.with {
+      null_ls.builtins.diagnostics.stylelint.with({
         prefer_local = "node_modules/.bin",
-      },
+      }),
       -- null_ls.builtins.diagnostics.pylint,
       null_ls.builtins.diagnostics.rubocop,
       null_ls.builtins.formatting.rubocop,

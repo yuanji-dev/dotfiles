@@ -14,10 +14,11 @@ return {
         "gopls",
         "pyright",
         "lua_ls",
-        "tsserver",
+        "ts_ls",
         "yamlls",
         "solargraph",
         "bashls",
+        "ruff_lsp",
         -- add more arguments for adding more language servers
       })
     end,
@@ -33,7 +34,6 @@ return {
         "stylua",
         "shellcheck",
         "shfmt",
-        "black",
         "hadolint",
         "vale",
         "stylelint",
