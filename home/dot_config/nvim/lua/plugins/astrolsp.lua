@@ -44,21 +44,29 @@ return {
     ---@diagnostic disable: missing-fields
     config = {
       -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
-      python = {
-        analysis = {
-          diagnosticMode = "openFilesOnly",
+      pyright = {
+        settings = {
+          python = {
+            analysis = {
+              diagnosticMode = "openFilesOnly",
+            },
+          },
         },
       },
-      yaml = {
-        schemas = {
-          ["https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.19.1-standalone-strict/all.json"] = {
-            "**/*.k8s.yaml",
-            "**/*.k8s.yml",
+      yamlls = {
+        settings = {
+          yaml = {
+            schemas = {
+              ["https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.19.1-standalone-strict/all.json"] = {
+                "**/*.k8s.yaml",
+                "**/*.k8s.yml",
+              },
+              ["http://json.schemastore.org/github-workflow"] = ".github/workflows/*.{yml,yaml}",
+              ["http://json.schemastore.org/github-action"] = ".github/action.{yml,yaml}",
+            },
+            customTags = { "!vault" },
           },
-          ["http://json.schemastore.org/github-workflow"] = ".github/workflows/*.{yml,yaml}",
-          ["http://json.schemastore.org/github-action"] = ".github/action.{yml,yaml}",
         },
-        customTags = { "!vault" },
       },
     },
     -- customize how language servers are attached

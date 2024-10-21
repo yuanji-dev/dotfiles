@@ -27,6 +27,7 @@ return {
       null_ls.builtins.diagnostics.erb_lint,
       null_ls.builtins.formatting.erb_lint,
       null_ls.builtins.formatting.htmlbeautifier,
+      null_ls.builtins.formatting.djlint,
     }
     config.default_timeout = 10000 -- 10s to wait pylint
     return config -- return final config table

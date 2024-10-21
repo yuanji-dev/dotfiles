@@ -14,11 +14,10 @@ return {
         "gopls",
         "pyright",
         "lua_ls",
-        "ts_ls",
         "yamlls",
         "solargraph",
         "bashls",
-        "ruff_lsp",
+        "ruff",
         -- add more arguments for adding more language servers
       })
     end,
@@ -37,6 +36,7 @@ return {
         "hadolint",
         "vale",
         "stylelint",
+        "djlint",
         -- use project-local pylint, do not install via mason. see
         -- https://github.com/williamboman/mason.nvim/issues/1336#issuecomment-1614274888
         -- "pylint",
