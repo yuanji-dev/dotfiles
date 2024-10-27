@@ -18,6 +18,8 @@ return {
         "solargraph",
         "bashls",
         "ruff",
+        "html",
+        "cssls",
         -- add more arguments for adding more language servers
       })
     end,
