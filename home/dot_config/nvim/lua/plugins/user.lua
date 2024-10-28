@@ -10,12 +10,16 @@ return {
   {
     "ray-x/lsp_signature.nvim",
     event = "BufRead",
-    config = function() require("lsp_signature").setup() end,
+    config = function()
+      require("lsp_signature").setup()
+    end,
   },
   {
     "keaising/im-select.nvim",
     lazy = false,
-    config = function() require("im_select").setup() end,
+    config = function()
+      require("im_select").setup()
+    end,
   },
 
   -- == Examples of Overriding Plugins ==
@@ -49,16 +53,16 @@ return {
   {
     "L3MON4D3/LuaSnip",
     config = function(plugin, opts)
-      require "astronvim.plugins.configs.luasnip"(plugin, opts) -- include the default astronvim config that calls the setup call
+      require("astronvim.plugins.configs.luasnip")(plugin, opts) -- include the default astronvim config that calls the setup call
       -- add more custom luasnip configuration such as filetype extend or custom snippets
-      local luasnip = require "luasnip"
+      local luasnip = require("luasnip")
       -- load snippets paths
-      require("luasnip.loaders.from_vscode").lazy_load {
+      require("luasnip.loaders.from_vscode").lazy_load({
         -- this can be used if your configuration lives in ~/.config/nvim
         -- if your configuration lives in ~/.config/astronvim, the full path
         -- must be specified in the next line
         paths = { "~/.vsnip" },
-      }
+      })
       -- see https://github.com/rafamadriz/friendly-snippets/issues/327
       luasnip.filetype_extend("sh", { "shelldoc" })
       luasnip.filetype_extend("javascript", { "javascriptreact" })
@@ -68,16 +72,16 @@ return {
   {
     "windwp/nvim-autopairs",
     config = function(plugin, opts)
-      require "astronvim.plugins.configs.nvim-autopairs"(plugin, opts) -- include the default astronvim config that calls the setup call
+      require("astronvim.plugins.configs.nvim-autopairs")(plugin, opts) -- include the default astronvim config that calls the setup call
       -- add more custom autopairs configuration such as custom rules
-      local npairs = require "nvim-autopairs"
-      local Rule = require "nvim-autopairs.rule"
-      local cond = require "nvim-autopairs.conds"
+      local npairs = require("nvim-autopairs")
+      local Rule = require("nvim-autopairs.rule")
+      local cond = require("nvim-autopairs.conds")
       npairs.add_rules(
         {
           Rule("$", "$", { "tex", "latex" })
             -- don't add a pair if the next character is %
-            :with_pair(cond.not_after_regex "%%")
+            :with_pair(cond.not_after_regex("%%"))
             -- don't add a pair if  the previous character is xxx
             :with_pair(
               cond.not_before_regex("xxx", 3)
@@ -85,7 +89,7 @@ return {
             -- don't move right when repeat character
             :with_move(cond.none())
             -- don't delete if the next character is xx
-            :with_del(cond.not_after_regex "xx")
+            :with_del(cond.not_after_regex("xx"))
             -- disable adding a newline when you press <cr>
             :with_cr(cond.none()),
         },
@@ -93,5 +97,17 @@ return {
         Rule("a", "a", "-vim")
       )
     end,
+  },
+
+  {
+    "stevearc/conform.nvim",
+    opts = {
+      formatters_by_ft = {
+        htmldjango = { "prettierd", "djlint" },
+      },
+      format_on_save = {
+        lsp_format = "fallback",
+      },
+    },
   },
 }
