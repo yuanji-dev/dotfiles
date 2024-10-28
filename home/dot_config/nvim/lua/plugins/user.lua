@@ -103,9 +103,10 @@ return {
     "stevearc/conform.nvim",
     opts = {
       formatters_by_ft = {
-        htmldjango = { "prettierd", "djlint" },
+        htmldjango = { "djlint" },
       },
       format_on_save = {
+        timeout_ms = 10000,
         lsp_format = "fallback",
       },
     },

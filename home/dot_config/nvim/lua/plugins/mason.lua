@@ -31,14 +31,13 @@ return {
     opts = function(_, opts)
       -- add more things to the ensure_installed table protecting against community packs modifying it
       opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, {
-        "prettierd",
+        "prettier",
         "stylua",
         "shellcheck",
         "shfmt",
         "hadolint",
         "vale",
         "stylelint",
-        "djlint",
         -- use project-local pylint, do not install via mason. see
         -- https://github.com/williamboman/mason.nvim/issues/1336#issuecomment-1614274888
         -- "pylint",
