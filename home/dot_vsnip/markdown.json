@@ -36,6 +36,15 @@
     "body": ["{{< video src=\"${1}\" caption=\"${0}\" >}}"],
     "description": "Add video html to document"
   },
+  "Hugo notice shortcode": {
+    "prefix": "h-notice",
+    "body": [
+      "{{< notice ${1|warning,info,note,tip|} >}}",
+      "${0}",
+      "{{< /notice >}}"
+    ],
+    "description": "Add notice box to document"
+  },
   "MkDocsAdmonition": {
     "prefix": "mkdocs-admonition",
     "body": [

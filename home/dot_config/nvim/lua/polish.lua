@@ -14,3 +14,11 @@ vim.filetype.add({
     [".*/templates/.*%.html"] = "htmldjango",
   },
 })
+
+-- Set up custom keymap for luasnip
+-- https://github.com/L3MON4D3/LuaSnip/blob/33b06d72d220aa56a7ce80a0dd6f06c70cd82b9d/README.md#keymaps
+vim.keymap.set({ "i", "s" }, "<C-E>", function()
+  if require("luasnip").choice_active() then
+    require("luasnip").change_choice(1)
+  end
+end, { silent = true })
