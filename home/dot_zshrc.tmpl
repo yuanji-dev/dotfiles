@@ -38,6 +38,8 @@ export TERM=xterm-256color
 export BROWSER=google-chrome-stable
 export GOPATH=$HOME/.go
 export PATH=$PATH:$HOME/.local/bin:$GOPATH/bin
+export ASDF_DATA_DIR=$HOME/.asdf
+export PATH=$ASDF_DATA_DIR/shims:$PATH
 export FPATH="$HOME/.zsh_completions:$FPATH"
 export XDG_CONFIG_HOME=$HOME/.config
 {{ if .isWSL -}}
@@ -93,9 +95,6 @@ source /usr/share/fzf/completion.zsh
 source /usr/share/fzf/key-bindings.zsh
 {{- end }}
 
-# asdf
-source "$HOME/.asdf/asdf.sh"
-fpath=(${ASDF_DIR}/completions $fpath)
 autoload -Uz compinit && compinit
 
 {{ if .hasBitwarden -}}

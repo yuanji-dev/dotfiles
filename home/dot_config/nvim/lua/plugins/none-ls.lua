@@ -14,7 +14,7 @@ return {
       -- Set a formatter
       null_ls.builtins.formatting.prettier.with({
         prefer_local = "node_modules/.bin",
-        filetypes = { "html", "json", "yaml", "markdown", "htmldjango" },
+        filetypes = { "html", "json", "yaml", "markdown", "htmldjango", "toml" },
       }),
       null_ls.builtins.formatting.shfmt,
       null_ls.builtins.diagnostics.hadolint,
