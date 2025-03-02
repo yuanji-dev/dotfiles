@@ -38,8 +38,6 @@ export TERM=xterm-256color
 export BROWSER=google-chrome-stable
 export GOPATH=$HOME/.go
 export PATH=$PATH:$HOME/.local/bin:$GOPATH/bin
-export ASDF_DATA_DIR=$HOME/.asdf
-export PATH=$ASDF_DATA_DIR/shims:$PATH
 export FPATH="$HOME/.zsh_completions:$FPATH"
 export XDG_CONFIG_HOME=$HOME/.config
 {{ if .isWSL -}}
@@ -81,7 +79,11 @@ tm() {
   session=$(tmux list-sessions -F "#{session_name}" 2>/dev/null | fzf --exit-0) &&  tmux $change -t "$session" || echo "No sessions found."
 }
 
+# asdf
 eval "$(fasd --init auto)"
+
+# mise
+eval "$(mise activate zsh)"
 
 # fzf
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
