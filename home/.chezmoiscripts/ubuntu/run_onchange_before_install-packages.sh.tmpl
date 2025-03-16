@@ -1,0 +1,47 @@
+{{ if eq .chezmoi.osRelease.id "ubuntu" -}}
+
+{{ $apt_packages := list
+    "bat"
+    "curl"
+    "eza"
+    "fasd"
+    "fcitx5-chinese-addons"
+    "fcitx5-mozc"
+    "fzf"
+    "git"
+    "git-delta"
+    "gnome-shell-extensions"
+    "gnome-tweaks"
+    "kitty"
+    "mise"
+    "ripgrep"
+    "syncthing"
+    "tealdeer"
+    "tig"
+    "tmux"
+    "ubuntu-defaults-ja"
+    "vim"
+    "wl-clipboard"
+    "wget"
+    "zsh"
+    "zotero" -}}
+
+#!/usr/bin/env bash
+
+set -eufo pipefail
+sudo apt update -y
+
+# install development libraries
+# see: https://github.com/basecamp/omakub/blob/bad975f7eb10db4ece1f754af6ab99bc1a0309f4/install/terminal/libraries.sh
+sudo apt install -y \
+  build-essential pkg-config autoconf bison clang rustc \
+  libssl-dev libreadline-dev zlib1g-dev libyaml-dev libreadline-dev libncurses5-dev libffi-dev libgdbm-dev libjemalloc2 \
+  libvips imagemagick libmagickwand-dev mupdf mupdf-tools gir1.2-gtop-2.0 gir1.2-clutter-1.0 \
+  redis-tools sqlite3 libsqlite3-0 libmysqlclient-dev libpq-dev postgresql-client postgresql-client-common
+
+sudo apt install -y {{ $apt_packages | join " " }}
+
+sudo snap install bw
+sudo snap install chezmoi --classic
+sudo snap install nvim --classic
+{{ end -}}

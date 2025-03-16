@@ -1,9 +1,0 @@
-langs=japanese,jpn,jp,ja,english,eng,en,chinese,chi,cn
-prefer_internal_subs=yes
-video_dir=~/Videos/ongoing
-bitrate=32k
-recent_threshold=10
-padding=0.5
-line_skip_pattern="^♪〜$|^〜♪$"
-filename_skip_pattern="NCOP|NCED"
-extract_audio_add_args=(-af loudnorm=I=-16:TP=-1.5:LRA=11)

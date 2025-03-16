@@ -4,11 +4,13 @@
 .local/share/atuin/key
 {{ end }}
 
-{{ if ne .chezmoi.os "linux" }}
-.chezmoiscripts/linux/**
+{{ if ne .chezmoi.osRelease.id "arch" }}
+.chezmoiscripts/arch/**
 .config/pacman/**
 .config/environment.d/**
 .config/chrome-flags.conf
-.config/mpd/**
-.config/immersionpod/**
+{{ end }}
+
+{{ if ne .chezmoi.osRelease.id "ubuntu" }}
+.chezmoiscripts/ubuntu/**
 {{ end }}

@@ -9,6 +9,8 @@ fi
 # sheldon
 #####################################################################
 
+export GOPATH=$HOME/.go
+export PATH=$PATH:$HOME/.local/bin:$HOME/.atuin/bin:$GOPATH/bin
 eval "$(sheldon source)"
 
 #####################################################################
@@ -36,8 +38,6 @@ bindkey '^[[B' history-substring-search-down
 export EDITOR=nvim
 export TERM=xterm-256color
 export BROWSER=google-chrome-stable
-export GOPATH=$HOME/.go
-export PATH=$PATH:$HOME/.local/bin:$GOPATH/bin
 export FPATH="$HOME/.zsh_completions:$FPATH"
 export XDG_CONFIG_HOME=$HOME/.config
 {{ if .isWSL -}}
@@ -48,7 +48,11 @@ export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
 
 alias ls='exa'
 alias ll='ls -alh'
+{{ if eq .chezmoi.osRelease.id "ubuntu" -}}
+alias cat=batcat
+{{- else -}}
 alias cat=bat
+{{- end }}
 alias sudo='sudo '
 alias vi='nvim'
 alias vim='nvim'
@@ -92,9 +96,12 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 {{ if eq .chezmoi.os "darwin" -}}
 source /usr/local/opt/fzf/shell/completion.zsh
 source /usr/local/opt/fzf/shell/key-bindings.zsh
-{{- else if eq .chezmoi.os "linux" -}}
-source /usr/share/fzf/completion.zsh
+{{- else if eq .chezmoi.osRelease.id "arch" -}}
+source /usr/share/fzf/example/completion.zsh
 source /usr/share/fzf/key-bindings.zsh
+{{- else if eq .chezmoi.osRelease.id "ubuntu" -}}
+source /usr/share/doc/fzf/examples/completion.zsh
+source /usr/share/doc/fzf/examples/key-bindings.zsh
 {{- end }}
 
 autoload -Uz compinit && compinit
