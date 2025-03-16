@@ -7,13 +7,18 @@
     "fasd"
     "fcitx5-chinese-addons"
     "fcitx5-mozc"
+    "fonts-klee"
+    "fonts-morisawa-bizud-gothic"
+    "fonts-morisawa-bizud-mincho"
     "fzf"
     "git"
     "git-delta"
     "gnome-shell-extensions"
+    "gnome-sushi"
     "gnome-tweaks"
     "kitty"
     "mise"
+    "mpv"
     "ripgrep"
     "syncthing"
     "tealdeer"
@@ -29,6 +34,7 @@
 #!/usr/bin/env bash
 
 set -eufo pipefail
+
 sudo apt update -y
 
 # install development libraries
@@ -39,8 +45,11 @@ sudo apt install -y \
   libvips imagemagick libmagickwand-dev mupdf mupdf-tools gir1.2-gtop-2.0 gir1.2-clutter-1.0 \
   redis-tools sqlite3 libsqlite3-0 libmysqlclient-dev libpq-dev postgresql-client postgresql-client-common
 
+# install other apt packages
 sudo apt install -y {{ $apt_packages | join " " }}
 
+# install snap packages
+sudo snap install anki-desktop
 sudo snap install bw
 sudo snap install chezmoi --classic
 sudo snap install hugo
