@@ -45,7 +45,7 @@ return {
     config = {
       -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
       html = {
-        filetypes = { "html", "templ", "htmldjango" },
+        filetypes = { "html", "templ", "htmldjango", "eruby" },
         init_options = {
           provideFormatter = false,
         },
