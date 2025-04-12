@@ -1,7 +1,7 @@
 [user]
     name = {{ .name }}
     email = {{ .email }}
-    signingkey = 3CB6EA7C55827AAD
+    signingkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOkR8453GlDyyz0x00UD8LWgKKSfCsDjRn3dJV6uFgya"
 
 [core]
     quotepath = false
@@ -31,6 +31,9 @@
 
 [diff]
     colorMoved = default
+
+[gpg]
+    format = ssh
 
 [commit]
     gpgsign = {{ .gpgsign }}

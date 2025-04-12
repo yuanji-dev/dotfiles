@@ -39,6 +39,7 @@ export EDITOR=nvim
 export TERM=xterm-256color
 export FPATH="$HOME/.zsh_completions:$FPATH"
 export XDG_CONFIG_HOME=$HOME/.config
+export SSH_AUTH_SOCK=$HOME/snap/bitwarden/current/.bitwarden-ssh-agent.sock
 {{ if .isWSL -}}
 # see: https://github.com/keybase/keybase-issues/issues/2798
 export GPG_TTY=$TTY
