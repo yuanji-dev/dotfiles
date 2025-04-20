@@ -18,13 +18,6 @@
     url = "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/JetBrainsMono.zip"
     include = ["*.ttf"]
 
-[".local/bin/fd"]
-    type = "archive-file"
-    executable = true
-    url = "https://github.com/sharkdp/fd/releases/download/v10.2.0/fd-v10.2.0-x86_64-unknown-linux-musl.tar.gz"
-    stripComponents = 1
-    path = "fd"
-
 {{ if .isWSL -}}
 [".local/bin/im-select"]
     type = "file"

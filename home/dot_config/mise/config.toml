@@ -1,4 +1,7 @@
 [tools]
+"aqua:atuinsh/atuin" = "latest"
+"aqua:rossmacarthur/sheldon" = "latest"
+fd = "10.2.0"
 go = "1.24"
 node = "22"
 python = "3.12"
