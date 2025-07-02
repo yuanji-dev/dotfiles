@@ -1,9 +1,7 @@
 {{ if eq .chezmoi.osRelease.id "ubuntu" -}}
 
 {{ $apt_packages := list
-    "bat"
     "curl"
-    "eza"
     "fasd"
     "fcitx5-chinese-addons"
     "fcitx5-mozc"
@@ -11,16 +9,13 @@
     "fonts-klee"
     "fonts-morisawa-bizud-gothic"
     "fonts-morisawa-bizud-mincho"
-    "fzf"
     "git"
-    "git-delta"
     "gnome-shell-extensions"
     "gnome-sushi"
     "gnome-tweaks"
     "mise"
     "mpv"
     "ncdu"
-    "ripgrep"
     "syncthing"
     "tealdeer"
     "tig"
@@ -54,10 +49,7 @@ sudo apt install -y {{ $apt_packages | join " " }}
 # install snap packages
 sudo snap install anki-desktop
 sudo snap install bw
-sudo snap install chezmoi --classic
 sudo snap install ghostty --classic
-sudo snap install hugo
-sudo snap install nvim --classic
 sudo snap install spotify
 sudo snap install telegram-desktop
 sudo snap install yt-dlp

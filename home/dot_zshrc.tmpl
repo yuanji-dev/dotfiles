@@ -48,7 +48,7 @@ export GPG_TTY=$TTY
 export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
 {{- end }}
 
-alias ls='exa'
+alias ls='eza'
 alias ll='ls -alh'
 {{ if eq .chezmoi.osRelease.id "ubuntu" -}}
 alias cat=batcat
