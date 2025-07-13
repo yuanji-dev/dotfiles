@@ -17,6 +17,7 @@ python = "3.12"
 rg = "latest"
 ruby = "3.4.2"
 usage = "latest"
+yq = "latest"
 
 [settings]
 idiomatic_version_file_enable_tools = ["ruby"]
