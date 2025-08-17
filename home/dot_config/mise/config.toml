@@ -15,7 +15,7 @@ neovim = "latest"
 node = "22"
 python = "3.12"
 rg = "latest"
-ruby = "3.4.2"
+ruby = "latest"
 usage = "latest"
 yq = "latest"
 
