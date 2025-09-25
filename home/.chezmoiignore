@@ -4,13 +4,17 @@
 .local/share/atuin/key
 {{ end }}
 
-{{ if ne .chezmoi.osRelease.id "arch" }}
+{{ if ne .osid "linux-arch" }}
 .chezmoiscripts/arch/**
 .config/pacman/**
 .config/environment.d/**
 .config/chrome-flags.conf
 {{ end }}
 
-{{ if ne .chezmoi.osRelease.id "ubuntu" }}
+{{ if ne .osid "linux-ubuntu" }}
 .chezmoiscripts/ubuntu/**
+{{ end }}
+
+{{ if ne .osid "darwin" }}
+.chezmoiscripts/darwin/**
 {{ end }}

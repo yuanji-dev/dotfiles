@@ -1,0 +1,20 @@
+{{ if eq .osid "darwin" -}}
+
+#!/usr/bin/env zsh
+
+brew bundle --file=/dev/stdin <<EOF
+tap "laishulu/homebrew"
+brew "bitwarden-cli"
+brew "chezmoi"
+brew "mise"
+brew "ruby-build"
+brew "tig"
+brew "laishulu/homebrew/macism"
+cask "bitwarden"
+cask "firefox"
+cask "ghostty"
+cask "obsidian"
+cask "syncthing-app"
+cask "telegram-desktop"
+EOF
+{{ end -}}

@@ -25,6 +25,10 @@
 {{- end -}}
 {{- end -}}
 
+{{- $osid := .chezmoi.os -}}
+{{- if hasKey .chezmoi.osRelease "id" -}}
+{{-   $osid = printf "%s-%s" .chezmoi.os .chezmoi.osRelease.id -}}
+{{- end -}}
 
 [pinentry]
   command = {{ $pinentryCmd | quote }}
@@ -37,6 +41,7 @@
   pinentryCmd = {{ $pinentryCmd | quote }}
   clipCmd = {{ $clipCmd | quote }}
   isWSL = {{ $isWSL }}
+  osid = {{ $osid | quote }}
 
 [data.bitwarden]
   ssh_config = "9a2c14ab-a8e2-42fd-96c9-47544743e0bb"

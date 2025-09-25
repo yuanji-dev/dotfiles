@@ -41,7 +41,13 @@ export EDITOR=nvim
 export TERM=xterm-256color
 export FPATH="$HOME/.zsh_completions:$FPATH"
 export XDG_CONFIG_HOME=$HOME/.config
+
+{{ if eq .osid "darwin" }}
+export SSH_AUTH_SOCK=/Users/yuanji/.bitwarden-ssh-agent.sock
+{{ else if eq .osid "linux-ubuntu" }}
 export SSH_AUTH_SOCK=$HOME/snap/bitwarden/current/.bitwarden-ssh-agent.sock
+{{ end }}
+
 {{ if .isWSL -}}
 # see: https://github.com/keybase/keybase-issues/issues/2798
 export GPG_TTY=$TTY
@@ -50,7 +56,7 @@ export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
 
 alias ls='eza'
 alias ll='ls -alh'
-{{ if eq .chezmoi.osRelease.id "ubuntu" -}}
+{{ if eq .osid "linux-ubuntu" -}}
 alias cat=batcat
 {{- else -}}
 alias cat=bat
@@ -86,7 +92,7 @@ tm() {
 }
 
 # fasd
-eval "$(fasd --init auto)"
+# eval "$(fasd --init auto)"
 
 # fzf
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
