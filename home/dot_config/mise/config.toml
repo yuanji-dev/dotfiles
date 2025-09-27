@@ -18,6 +18,7 @@ rg = "latest"
 ruby = "latest"
 usage = "latest"
 yq = "latest"
+yt-dlp = "latest"
 
 [settings]
 idiomatic_version_file_enable_tools = ["ruby"]
