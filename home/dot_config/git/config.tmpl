@@ -10,22 +10,6 @@
 [interactive]
     diffFilter = delta --color-only
 
-{{ if not .isWSL -}}
-[delta]
-    navigate = true
-    minus-style                   = syntax "#3f2d3d"
-    minus-non-emph-style          = syntax "#3f2d3d"
-    minus-emph-style              = syntax "#763842"
-    minus-empty-line-marker-style = syntax "#3f2d3d"
-    line-numbers-minus-style      = "#c25d64"
-    plus-style                    = syntax "#283b4d"
-    plus-non-emph-style           = syntax "#283b4d"
-    plus-emph-style               = syntax "#316172"
-    plus-empty-line-marker-style  = syntax "#283b4d"
-    line-numbers-plus-style       = "#399a96"
-    line-numbers-zero-style       = "#3b4261"
-{{- end }}
-
 [merge]
     conflictstyle = diff3
 
@@ -39,9 +23,13 @@
     gpgsign = {{ .gpgsign }}
 
 [init]
-    defaultBranch = main
+    defaultBranch = master
 
 [alias]
+    co = checkout
+    br = branch
+	  ci = commit
+	  st = status
 	# commit-status: generate a commit with message from git-status (staged changes).
 	# Source: https://gist.github.com/erikw/654386d35ecfdb0354cd2b71763f19ae
 	# Explanation:
@@ -72,5 +60,8 @@
 		rm -f $TMPFILE \
 		"
 
-[includeIf "gitdir:~/work/"]
-    path = ~/work/.gitconfig
+[pull]
+    rebase = true
+
+[includeIf "gitdir:~/Work/"]
+    path = ~/Work/.gitconfig

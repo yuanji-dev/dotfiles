@@ -7,21 +7,3 @@
     type = "git-repo"
     url = "https://github.com/Ajatt-Tools/videoclip.git"
     refreshPeriod = "168h"
-
-[".local/share/fonts/UbuntuMono"]
-    type = "archive"
-    url = "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/UbuntuMono.tar.xz"
-    include = ["*.ttf"]
-
-[".local/share/fonts/JetBrainsMono"]
-    type = "archive"
-    url = "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/JetBrainsMono.zip"
-    include = ["*.ttf"]
-
-{{ if .isWSL -}}
-[".local/bin/im-select"]
-    type = "file"
-    executable = true
-    url = "https://github.com/daipeihust/im-select/raw/master/win/out/x86/im-select.exe"
-    refreshPeriod = "168h"
-{{- end }}

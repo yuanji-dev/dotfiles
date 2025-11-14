@@ -1,24 +1,9 @@
 [tools]
-"aqua:atuinsh/atuin" = "latest"
-"aqua:rossmacarthur/sheldon" = "latest"
-bat = "latest"
-chezmoi = "latest"
-delta = "latest"
-eza = "latest"
-fastfetch = "latest"
-fd = "latest"
-fzf = "latest"
 go = "1.24"
-hugo = "latest"
-lazygit = "latest"
-neovim = "latest"
 node = "22"
 python = "3.12"
-rg = "latest"
 ruby = "latest"
 usage = "latest"
-yq = "latest"
-yt-dlp = "latest"
 
 [settings]
 idiomatic_version_file_enable_tools = ["ruby"]
