@@ -3,21 +3,16 @@
 #!/usr/bin/env zsh
 
 brew bundle --file=/dev/stdin <<EOF
-tap "laishulu/homebrew"
-brew "bitwarden-cli"
+brew "atuin"
 brew "chezmoi"
+brew "fastfetch"
+brew "fd"
+brew "git-delta"
 brew "mise"
-brew "ruby-build"
+brew "ripgrep"
+brew "starship"
 brew "tig"
-brew "laishulu/homebrew/macism"
-cask "anki"
-cask "bitwarden"
-cask "firefox"
-cask "flameshot"
-cask "ghostty"
-cask "iina"
-cask "obsidian"
-cask "syncthing-app"
-cask "telegram-desktop"
+brew "zimfw"
+brew "zoxide"
 EOF
 {{ end -}}

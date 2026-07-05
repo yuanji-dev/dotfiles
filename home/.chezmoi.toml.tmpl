@@ -1,28 +1,12 @@
 {{- $email := "yuanji@yuanji.dev" -}}
 {{- $name := "Yuanji" -}}
 {{- $gpgsign := true -}}
-{{- $hasBitwarden := true -}}
-{{- $isWSL := false -}}
-{{- $pinentryCmd := "pinentry" -}}
 {{- $clipCmd := "pbcopy" -}}
 
 {{- if stdinIsATTY -}}
 {{- $email = promptString "email" $email -}}
 {{- $name = promptString "name" $name -}}
 {{- $gpgsign = promptBool "gpgsign" $gpgsign -}}
-{{- $hasBitwarden = promptBool "hasBitwarden" $hasBitwarden -}}
-{{- end -}}
-
-{{- if eq .chezmoi.os "darwin" -}}
-{{- $pinentryCmd = "/opt/homebrew/bin/pinentry-mac" -}}
-{{- else if eq .chezmoi.os "linux" -}}
-{{- $pinentryCmd = "/usr/bin/pinentry-gnome3" -}}
-{{- $clipCmd = "wl-copy" -}}
-{{- if (.chezmoi.kernel.osrelease | lower | contains "microsoft") -}}
-{{- $pinentryCmd = "/usr/bin/pinentry" -}}
-{{- $clipCmd = "clip.exe" -}}
-{{- $isWSL = true -}}
-{{- end -}}
 {{- end -}}
 
 {{- $osid := .chezmoi.os -}}
@@ -30,19 +14,9 @@
 {{-   $osid = printf "%s-%s" .chezmoi.os .chezmoi.osRelease.id -}}
 {{- end -}}
 
-[pinentry]
-  command = {{ $pinentryCmd | quote }}
-
 [data]
   email = {{ $email | quote }}
   name = {{ $name | quote }}
   gpgsign = {{ $gpgsign }}
-  hasBitwarden = {{ $hasBitwarden }}
-  pinentryCmd = {{ $pinentryCmd | quote }}
   clipCmd = {{ $clipCmd | quote }}
-  isWSL = {{ $isWSL }}
   osid = {{ $osid | quote }}
-
-[data.bitwarden]
-  ssh_config = "9a2c14ab-a8e2-42fd-96c9-47544743e0bb"
-  atuin_key = "180b9f93-6329-41dd-8ac5-a616da422750"
